@@ -1,0 +1,36 @@
+{
+  "name": "project-name",
+  "description": "project created by thinkjs",
+  "version": "0.1.0",
+  "author": {},
+  "dependencies": {
+    "gulp-rename": "^1.2.2",
+    "gulp-rename-plus": "0.0.2",
+    "thinkjs": "1.2.10"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "aliyun-sdk": "^1.5.8",
+    "captchapng": "0.0.1",
+    "del": "^1.1.1",
+    "dplus": "0.0.3",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.3.0",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-livereload": "^3.8.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-ruby-sass": "^1.0.5",
+    "gulp-sass": "^2.0.4",
+    "imagemin-pngquant": "^4.1.2",
+    "request": "^2.55.0"
+  },
+  "license": "MIT"
+}
