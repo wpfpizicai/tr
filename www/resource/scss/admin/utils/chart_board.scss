@@ -1,0 +1,70 @@
+@import "../settings";
+.chartboard{
+  display: inline-block;
+  position: relative;
+  width: calc(50% - 20px);
+  box-sizing: border-box;
+  margin: 0 20px 20px 0;
+  border-radius: 0;
+  min-height: 200px;
+  padding: 13px 20px 20px 20px;
+  background-color: $white;
+  transition: all ease-out .2s;
+  -webkit-transition: all ease-out .2s;
+  border: 1px solid $color-border-select;
+
+  &:hover{
+    border-color: $color-border-card-hover;
+  }
+  &.chartboard-long{
+    width: calc(100% - 22px);
+  }
+  .chart-head{
+    background-color: transparent;
+    font-size: 14px;
+    padding: 0;
+    height: 50px;
+    border-radius:0;
+
+    >.g-select2 + .radiusBtn{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .chart-nav{
+      display: block;
+      float: right;
+      &>.item{
+        font-size: 12px;
+        margin-left: 10px;
+        &:hover{
+          cursor: pointer;
+          text-decoration: underline;
+        }
+        &.active{
+          color: $color-font-link;
+          text-decoration: none;
+        }
+        &::before{
+          content: "";
+          display: inline-block;
+          width: 0;
+          height: 9px;
+          margin-right: 10px;
+          border-left: 1px solid $color-font-common;
+        }
+        &:first-child{
+          &::before{
+            content: none;
+          }
+        }
+      }
+    }
+  }
+  .chartcontainer {
+    box-sizing: border-box;
+    text-align: center;
+    height: 350px;
+    border-radius: 0 0 4px 4px;
+  }
+}

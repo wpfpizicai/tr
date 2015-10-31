@@ -1,0 +1,29 @@
+@import "../common";
+@import "course-video/course-video-play-list";
+body{
+  background-color: $body_bg_color;
+}
+.container{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  padding-top: 0!important;
+  &.loading{
+    background-color: #000;
+    .video-view{
+      display: none;
+    }
+  }
+
+
+}
+.down-container{
+  width: 1200px;
+  padding: 0;
+  margin: 20px auto;
+  @import "course-video/course-down-part";
+  @import "course-video/comments";
+}
+
+@import "course-video/course-video-previos-next";
+@import "course-video/course-video-end-list";

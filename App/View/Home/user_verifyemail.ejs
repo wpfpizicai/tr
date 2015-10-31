@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+    <!--<link rel="stylesheet" href="/resource/css/forget.css">-->
+    <link rel="stylesheet" href="/resource/css/user-verifyemail.css"/>
+
+</head>
+<body>
+<%- include ../header.ejs %>
+
+<div class="container">
+    <%- include user_center_left.ejs %>
+    <div class="right-container">
+        <div class="my-wrap">
+            <div class="head">
+                <h1>当前邮箱</h1>
+                <h1 id="user_email"><%=userInfo.username%></h1>
+            </div>
+            <div class="status">
+            <%if(userInfo.activate_email == "true"){%>
+            <p class="bg-text bg-success">邮箱验证通过</p>
+            <% } else { %>
+            <p class="bg-text bg-danger">邮箱验证未通过</p>
+            <div class="send-verify">
+              <input type="text" name="verify" maxlength="4" placeholder="请输入验证码" id="verify_code">
+              <img src="/user/getcode?1430661770679" alt="验证码" title="验证码">
+              <span class="change-code">看不清<br>换一张</span>
+              <button type="button" class="btn btn-primary" id="verify_email">发送邮件验证</button>
+            </div>
+            <% } %>
+            </div>
+        </div>
+        <div class=" js-forgot-result forgot-send-result">
+          <div class="input-row">
+              <i></i>
+              <p>
+                  邮件验证连接邮件已发送到您的邮箱<em></em><br>
+                  请注意查收并验证您的邮箱，验证邮箱可以更好的保护您的账户安全，请及时验证！
+              </p>
+              <div class="btn-wrapper">
+                  <a href="/" class="btn btn-green link-btn btn-block">返回登录</a>
+              </div>
+          </div>
+        </div>
+    </div>
+
+</div>
+<%- include ../footer.ejs %>
+<script id="userInfo" data-id="<%=userInfo.id%>" data-avator="<%userInfo.avator%>"></script>
+<script>seajs.use('js/user/verifyemail');</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+@import "../settings";
+//@extend-elements
+//original selectors
+//html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+%extend_1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+//original selectors
+//caption, th, td
+%extend_2 {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+//original selectors
+//input[role="input"], textarea[role="input"], div[role="input"], select[role="input"]
+%extend_3 {
+  border: 1px solid $color_silver_chalice;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 3px;
+  outline: none;
+}
+
+//original selectors
+//.pageHeader .rightUserInfo .wangwang, .pageHeader .rightUserInfo .question
+%extend_4 {
+  display: inline-block;
+  line-height: 60px;
+  color: $white;
+  text-align: center;
+  float: left;
+  height: 60px;
+  width: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 20px;
+}
+
+//original selectors
+//.pageHeader .leftHeaderMenu .dropdown .item, .pageHeader .rightUserInfo .userInfo .userHeaderList .sjxin, .pageHeader .rightUserInfo .userInfo .userHeaderList .logout
+%extend_5 {
+  line-height: 40px;
+  height: 40px;
+  text-align: left;
+  color: $color_font;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+//original selectors
+//.popLayout .pop-icon.exclamation::before, .icon.exclamation::before
+%extend_6 {
+  font-family: $font_6;
+  font-size: 12px;
+  font-style: normal;
+  content: "\e60d";
+  color: $color_loblolly;
+  font-size: 50px;
+  display: block;
+  position: relative;
+}
+
+//original selectors
+//.popLayout .pop-icon.ok::before, .icon.ok::before
+%extend_7 {
+  font-family: $font_6;
+  font-size: 12px;
+  font-style: normal;
+  content: "\e618";
+  color: $color_feijoa;
+  font-size: 50px;
+  position: relative;
+}
+
+//original selectors
+//.popLayout .pop-icon.wrong::before, .icon.wrong::before
+%extend_8 {
+  font-family: $font_6;
+  font-size: 12px;
+  font-style: normal;
+  content: "\e603";
+  color: $color_cornflower_lilac;
+  font-size: 50px;
+  position: relative;
+}
+
+//original selectors
+//.radiusBtn.ghostBtn:hover, .radiusBtn.ghostBtn.gray-border:hover
+%extend_9 {
+  color: $white;
+  border-color: $color-main-hover;
+  background-color: $color-main-hover;
+}
+
+//original selectors
+//.checkBox[checked="checked"] + .labelForCheckBox:before, .checkBox:checked + .labelForCheckBox:before
+%extend_checkBox {
+  content: "\e60f";
+  font-family: $font_6;
+  font-size: 12px;
+  width: 14px;
+  height: 14px;
+  font-style: normal;
+  line-height: 12px;
+  margin: 0;
+  background-color: $color-main;
+  border-color: $color-main;
+  transition: background-color ease .2s, border-color ease-out .3s;
+  color: $white;
+}
+
+//original selectors
+//.g-filter-selector .options-wrapper, .g-filter-selector-result-list .options-wrapper
+%extend_11 {
+  width: 100%;
+  height: auto;
+  height: 320px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+//original selectors
+//.g-filter-selector .options, .g-filter-selector-result-list .options
+%extend_12 {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;
+  font-size: 14px;
+  color: $color_font;
+  text-align: left;
+  cursor: pointer;
+}
+
+//original selectors
+//.mCS-my-theme.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, .mCS-my-theme.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar
+%extend_13 {
+  background-color: $color_mountain_mist;
+  background-color: $color_mountain_mist_85;
+  filter: "alpha(opacity=85)";
+}
+
+%extend_iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  //-webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+
+}
+
+%extend_word_cut {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

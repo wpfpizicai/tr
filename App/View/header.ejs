@@ -1,0 +1,22 @@
+<div class="header" id="header">
+  <a href="/" class="logo" id="logo"></a>
+  <nav class="header-nav">
+    <%navLinks.forEach(function(item){%>
+    <div class=" nav-item <% if(section == item.key){ %>active<% } %>"><a href="<%= item.href%>"><%= item.label %></a></div>
+    <%})%>
+  </nav>
+  <div class="user-right">
+    <%if(userInfo){%>
+    <div class="link-item">
+      <div id="user_head_icon" class="user-head-icon user-head-<%=userInfo.avator||11%>"></div>
+      <a id="signin_user" href="/user/see/<%= userInfo.id %>"><%= userInfo.username %></a>
+    </div>
+    <div class="link-item" title="消息"><a class="iconfont message" href="/user/message" data-msg="" id="header_message">&#xe608;</a></div>
+    <div class="link-item"><a id="logout_btn" href="/user/logout">退出</a></div>
+    <% } else { %>
+    <div class="link-item"><a id="signin_btn">登录</a></div>
+    <div class="link-item"><a id="signup_btn">注册</a></div>
+    <%}%>
+  </div>
+
+</div>

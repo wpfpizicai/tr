@@ -1,0 +1,21 @@
+.g-page-way {
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  margin: 20px 0 10px 0; }
+  .g-page-way .g-page-way-node {
+    display: inline;
+    color: #999;
+    text-decoration: none;
+    cursor: pointer; }
+    .g-page-way .g-page-way-node::after {
+      content: '\\';
+      cursor: default;
+      padding: 0 5px 0 8px;
+      color: #777; }
+    .g-page-way .g-page-way-node:last-child {
+      color: #555; }
+    .g-page-way .g-page-way-node:last-child::after {
+      content: normal; }
+
+/*# sourceMappingURL=way.css.map */

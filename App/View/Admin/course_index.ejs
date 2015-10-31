@@ -1,0 +1,192 @@
+<html ng-app="nebulafeAdmin">
+<%- include ./utils/common_head.ejs %>
+<body>
+<%- include ./utils/header.ejs %>
+<div class="container">
+    <section class="card add-course-box">
+        <div class="row">
+            <h1>编辑课程</h1>
+        </div>
+        <form class="row" id="course-form">
+
+            <div class="row">
+                <label class="col " for="">所属机构</label>
+
+                <div class="col " style="text-align: left">
+                    <select name="partner" id="select" class="input input-mid" ng-model="course.partner">
+                        <% partners.forEach(function(val){%>
+                        <option value="<%- val.id %>"><%-val.name%></option>
+                        <%})%>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col " for="">课程名称</label>
+
+                <div class="col">
+                    <input type="text" class="input input-mid" name="name" ng-model="course.name" placeholder="课程名称"/>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col " for="">课程类别</label>
+
+                <div class="col">
+                    <input type="text" class="input input-mid" name="tag" ng-model="course.tag" placeholder="以英文逗号,分隔"/>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col " for="">课程概述</label>
+
+                <div class="col">
+                    <textarea class="input input-mid" name="intro" ng-model="course.description" placeholder="课程概述"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col " for="">课程简介</label>
+
+                <div class="col">
+                    <textarea class="input input-mid" name="intro" ng-model="course.introduction" placeholder="课程简介"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col " for="">课程封面</label>
+
+                <div class="col">
+                    <label for="poster_input" class="radiusBtn square style_2 auto short-height"
+                           id="upload-label">上传封面</label>
+                    <input type="file" name="img" class="hide" id="poster_input"/>
+                </div>
+
+                <div class="col">
+                    <img src="" alt="" id="img_overview"/>
+                </div>
+
+
+
+            </div>
+            <div class="row">
+                <label class="col " for="">课程时长</label>
+
+                <div class="col">
+                    <input type="text" class="input input-mid" name="tag" ng-model="course.total_time" placeholder="课程时长"/>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col " for="">开放截止日期</label>
+
+                <div class="col">
+                    <input type="datetime-local" class="input input-mid" name="time" ng-model="course.time" placeholder="开放截止日期"/>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col " for="">课程大纲</label>
+
+                <div class="col">
+                    <textarea class="input input-mid" name="outline" ng-model="course.outline" placeholder="课程大纲"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col " for="">先修知识</label>
+
+                <div class="col">
+                    <textarea class="input input-mid" name="outline" ng-model="course.prelearn" placeholder="先修知识"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col " for="">常见问题</label>
+
+                <div class="col">
+                    <textarea class="input input-mid" name="outline" ng-model="course.fag" placeholder="常见问题"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col " for="">参考资料</label>
+
+                <div class="col">
+                    <textarea class="input input-mid" name="reference" ng-model="course.reference" placeholder="参考资料"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col " for="">辅助资料</label>
+
+                <div class="col">
+                    <label for="material_input" class="radiusBtn square style_2 auto short-height"
+                           id="upload-label">上传资料</label>
+                    <input type="file" name="material" class="hide" id="material_input"/>
+                </div>
+                <div class="col" id="material_name">
+
+                </div>
+            </div>
+            <div class="row">
+                <label class="col " for="">更新状态</label>
+
+                <div class="col">
+                    <input class="input input-mid" name="update_status" ng-model="course.update_status" placeholder="更新状态">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-left"></div>
+                <div class="col col-right">
+                    <span class="radiusBtn square style_1" id="submit_btn">提 交</span>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
+</body>
+<script>
+    (function(){
+        function loadUpdatedPoster(fileObj) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var dataUrl = reader.result;
+                $('#img_overview').attr('src',dataUrl).css({'width':'120px'});
+            };
+            reader.readAsDataURL(fileObj);
+        }
+
+        function submit(){
+            var formData = new FormData(document.getElementById('course-form'));
+            $.ajax({
+                url: '/manage/course',
+                type: "POST",
+                data: formData,
+                processData: false,  // 告诉jQuery不要去处理发送的数据
+                contentType: false   // 告诉jQuery不要去设置Content-Type请求头
+            }).success(function () {
+                alert('提交成功');
+            });
+        }
+
+        (function bind(){
+            $("#course-form").on('change',function(ev){
+                if(ev.target.id == "poster_input"){
+
+                    loadUpdatedPoster(ev.target.files[0]);
+                }
+                else if(ev.target.id == 'material_input'){
+                    var names = _.map(ev.target.files,function(item){
+                       return '<span>'+item.name+'</span>';
+                    });
+                    var html = names.join('<br>');
+                    $('#material_name').html(html);
+                }
+            });
+
+            $('#submit_btn').on('click',function(){
+                submit();
+            });
+
+
+        })();
+    })();
+</script>
+<%-include ./utils/templates.ejs%>
+<!--新建/编辑课程-->
+<script type="text/ng-template" id="templates/admin/course/edit.ejs">
+
+</script>
+</html>
+

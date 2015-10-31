@@ -1,0 +1,41 @@
+$user-head-r : 40px;
+.comment-list{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0;
+    .comment{
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        padding:15px 0 5px 0;
+        border-bottom: 1px solid #ccc;
+        &:last-child{
+            border: none;
+        }
+        .left-content{
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 5px;
+            margin-right: 5px;
+            width: $user-head-r + 10px;
+            height: $user-head-r + 10px;
+        }
+        .right-content{
+            display: inline-block;
+            vertical-align: top;
+            width: 810px - $user-head-r - 20px;
+            .user-name{
+                font-size: 13px;
+                margin-bottom: 5px;
+            }
+            .comment-content p{
+                line-height: 1.7;
+                padding-bottom: 5px;
+            }
+            .comment-time{
+                color: #666;
+                font-size: 12px;
+            }
+        }
+    }
+}

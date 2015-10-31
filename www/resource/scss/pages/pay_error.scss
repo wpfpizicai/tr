@@ -1,0 +1,34 @@
+@import "../common";
+.n-error{
+  text-align: center;
+  .col{
+    float: left;
+  }
+  .error-wrapper{
+    width: 500px;
+    margin: 100px auto;
+    padding: 20px 80px;
+    overflow: hidden;
+    background-color: #fff8f9;
+    color: $color_red_orange_approx;
+    border: 1px solid $color_red_orange_approx;
+    .error-icon{
+      display: block;
+      width: 36px;
+      height: 36px;
+      margin: 0 25px 0 0;
+      line-height: 36px;
+      border-radius: 40px;
+      background-color: $white;
+      &:before{
+        @extend .iconfont;
+        content: $icon-shanchu2;
+        color: $color_red_orange_approx;
+        font-size: 25px;
+      }
+    }
+    .col{
+
+    }
+  }
+}

@@ -1,0 +1,90 @@
+
+.c-video-list-wrapper {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 300px;
+  width: auto;
+  height: 60px;
+  z-index: 1100;
+  line-height: 60px;
+  padding: 0 30px;
+  color: #ccc;
+  &:focus {
+    outline: none;
+  }
+  &::before {
+    display: inline-block;
+    content: $icon-liebiao;
+    @extend .iconfont;
+    color: #ccc;
+    @include translateY(-1px);
+  }
+  &:hover {
+    background-color: rgba(255, 255, 255, .2);
+  }
+  .c-recent-course-name {
+    color: #ccc;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.c-video-play-list {
+  display: none;
+  position: fixed;
+  width: auto;
+  left: 300px;
+  top: 60px;
+  background-color: #222;
+  color: #ccc;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1100;
+  &:hover {
+    display: block;
+  }
+  .c-video-play-list-item {
+    display: block;
+    padding: 0 20px 0 35px;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    min-width: 200px;
+    font-size: 14px;
+
+
+    color: #ccc;
+    &:hover {
+      color: #fff;
+    }
+    &.current-play{
+      margin-left: -20px;
+      background-color: rgba(255,255,255,.3);
+    }
+    &.current-play::before {
+      content: $icon-sanjiao3;
+      @extend .iconfont;
+      color: #ccc;
+      width: 20px;
+    }
+    &.current-play:hover{
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, .2);
+      cursor: pointer;
+    }
+  }
+
+}
+
+.c-video-list-wrapper:hover + .c-video-play-list,
+.c-video-list-wrapper:focus + .c-video-play-list, {
+  display: block;
+}

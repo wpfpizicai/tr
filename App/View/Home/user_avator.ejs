@@ -1,0 +1,63 @@
+<!Doctype html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+    <link rel="stylesheet" href="/resource/css/user-avator.css"/>
+
+</head>
+<body>
+<%- include ../header.ejs %>
+
+<div class="container">
+    <%- include user_center_left.ejs %>
+    <div class="right-container">
+        <div class="my-wrap">
+            <div class="my-form">
+                <div id="js-user-set-form" autocomplete="off">
+                    <div class="input-row user-head-row">
+                        <label class="label">我的头像</label>
+                        <div id="current-head" class="current-head user-head-icon user-head-<%=userInfo.avator||1%>"></div>
+                    </div>
+
+                    <div class="input-row">
+                        <label class="label">可选头像</label>
+                        <div class="heads-pool" id="heads-pool">
+                            <% for(var i = 1; i<= 19; i++){ %>
+                                <div class="heads user-head-icon user-head-<%=i%> <% if(userInfo.avator == i){%> selected <%}%><% if(userInfo.avator == undefined && i==1){%> selected <%}%>" data-avator="<%=i%>"
+
+                                        ></div>
+                            <% }%>
+                        </div>
+                    </div>
+
+
+                    <input type="hidden" value="<%=userInfo.id%>" name="id" class="ipt-id">
+
+
+                    <div class="row tip-row">
+                        <p class="tips" id="js-g-forgot-error">&nbsp;</p>
+                    </div>
+                    <div class="input-row">
+                        <label class="label"></label>
+                        <div class="btn-wrapper">
+                            <input type="submit" id="change_avator" class="btn btn-green link-btn btn-block"
+                                   value="换个头像">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--<div class="mmsg-box mmsg-box-info" style="margin-top: -23.5px; margin-left: -96.5px;">-->
+    <!--<div class="mmsg-content"><i class="mmsg-icon"></i>-->
+
+        <!--<p>资料修改成功！</p></div>-->
+    <!--<div class="mmsg-background"></div>-->
+<!--</div>-->
+<%- include ../footer.ejs %>
+<script id="userInfo" data-id="<%=userInfo.id%>" data-avator="<%userInfo.avator%>"></script>
+<script>seajs.use('js/user/avator');</script>
+</body>
+</html>

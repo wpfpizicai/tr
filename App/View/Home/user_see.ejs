@@ -1,0 +1,84 @@
+<!Doctype html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+    <!--<link rel="stylesheet" href="/resource/css/forget.css">-->
+    <link rel="stylesheet" href="/resource/css/user-setting.css"/>
+
+</head>
+<body>
+<%- include ../header.ejs %>
+<div class="container">
+    <%- include user_center_left.ejs %>
+    <div class="right-container">
+        <div class="my-wrap">
+            <div class="my-form">
+                <div id="js-user-set-form" autocomplete="off">
+                    <div class="input-row">
+                        <label class="label">用户名</label>
+                        <input type="text" name="email" data-validate="email" class="g-ipt ipt-email" disabled
+                               autocomplete="off" placeholder="请输入登录邮箱" value="<%=userInfo.username%>" data-value="<%=userInfo.username%>">
+                        <i></i>
+                        <p class="rlf-tip-wrap"></p>
+                        <input style="display:none;">
+                    </div>
+                    <div class="input-row">
+                        <label class="label">昵称</label>
+                        <input type="text" name="nickname" data-validate="nick" class="g-ipt ipt-nick" placeholder="请输入用户昵称"
+                               value="<%=userInfo.nickname%>" data-value="<%=userInfo.nickname%>" data-changed="false">
+                        <i></i>
+                        <p class="rlf-tip-wrap"></p>
+                    </div>
+                    <div class="input-row">
+                        <label class="label">姓名</label>
+                        <input type="text" name="realname" data-validate="nick" class="g-ipt ipt-realname"
+                               placeholder="请输入您的真实姓名" value="<%=userInfo.realname%>" data-value="<%=userInfo.realname%>" data-changed="false">
+                        <i></i>
+                        <p class="rlf-tip-wrap"></p>
+                    </div>
+                    <div class="input-row">
+                        <label class="label">手机号</label>
+                        <input type="text" name="mobile" data-validate="nick" class="g-ipt ipt-mobile"
+                               placeholder="请输入您的手机号" value="<%=userInfo.mobile%>" data-value="<%=userInfo.mobile%>"  data-changed="false">
+                        <i></i>
+                        <p class="rlf-tip-wrap"></p>
+                    </div>
+                    <div class="input-row">
+                        <label class="label">身份证号</label>
+                        <input type="text" name="idcard" data-validate="nick" class="g-ipt ipt-idcard"
+                               placeholder="请输入您的身份证号" value="<%=userInfo.idcard%>" data-value="<%=userInfo.idcard%>" data-changed="false">
+                        <i></i>
+                        <p class="rlf-tip-wrap"></p>
+                    </div>
+
+                    <input type="hidden" value="<%=userInfo.id%>" name="id" class="ipt-id">
+
+                    <div class="input-row form-control-verify">
+                        <label class="label">验证码</label>
+                        <input type="text" name="verify" maxlength="4" class="g-ipt" placeholder="请输入验证码">
+                        <i></i>
+                        <img src="/user/getcode?1430661770679" alt="验证码" title="验证码">
+                        <span class="js-change-verify-code">看不清,换一张</span>
+
+                        <p class="tips"></p>
+                    </div>
+                    <div class="row tip-row">
+                        <p class="tips" id="js-g-forgot-error">&nbsp;</p>
+                    </div>
+                    <div class="input-row">
+                        <label class="label"></label>
+                        <div class="btn-wrapper">
+                            <input type="submit" id="js-forgot-submit" class="btn btn-green link-btn btn-block"
+                                   value="提交">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<%- include ../footer.ejs %>
+<script>seajs.use('js/user/set');</script>
+</body>
+</html>

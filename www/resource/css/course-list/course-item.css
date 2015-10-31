@@ -1,0 +1,75 @@
+/*
+Error: Undefined variable: "$color_snow_drift_approx".
+        on line 12 of scss/pages/course-list/course-item.scss
+
+7:   display: inline-block;
+8:   vertical-align: top;
+9:   border: transparent;
+10:   background: #fff;
+11:   //background: $color_snow_drift_approx;
+12:   border-bottom: 2px solid $color_snow_drift_approx;
+13:   margin: $course-item-margin;
+14:   height: nth($course-item-size,1);
+15:   width: nth($course-item-size,2);
+16:   padding: $course-item-padding;
+17:   cursor: pointer;
+
+Backtrace:
+scss/pages/course-list/course-item.scss:12
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/script/tree/variable.rb:49:in `_perform'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/script/tree/list_literal.rb:63:in `map'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/script/tree/list_literal.rb:63:in `_perform'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `map'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/engine.rb:295:in `render_with_sourcemap'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:293:in `watch'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/plugin.rb:108:in `method_missing'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:384:in `watch_or_update'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:51:in `process_result'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/exec/base.rb:52:in `parse'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/exec/base.rb:19:in `parse!'
+C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.16/bin/sass:13:in `<top (required)>'
+C:/Ruby21-x64/bin/sass:23:in `load'
+C:/Ruby21-x64/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$color_snow_drift_approx\".\A         on line 12 of scss/pages/course-list/course-item.scss\A \A 7:   display: inline-block;\A 8:   vertical-align: top;\A 9:   border: transparent;\A 10:   background: #fff;\A 11:   //background: $color_snow_drift_approx;\A 12:   border-bottom: 2px solid $color_snow_drift_approx;\A 13:   margin: $course-item-margin;\A 14:   height: nth($course-item-size,1);\A 15:   width: nth($course-item-size,2);\A 16:   padding: $course-item-padding;\A 17:   cursor: pointer;"; }

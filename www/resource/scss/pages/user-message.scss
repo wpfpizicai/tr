@@ -1,0 +1,292 @@
+@import "../common";
+.message-container{
+  width: 100%;
+  height: 550px;
+  background-image: url(/resource/img/bgcollection02.jpg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  $message-page-parts-widths: 80px 300px (1170px - 380px);
+  %extend_message_float{
+    display: block;
+    float: left;
+    height: inherit;
+    box-sizing: border-box;
+  }
+  .left-part{
+    @extend %extend_message_float;
+    background-color: #333;
+    width: nth($message-page-parts-widths,1);
+    .menu-item{
+      width: inherit;
+      height: 70px;
+      line-height: 70px;
+      text-align: center;
+      .iconfont{
+        display: block;
+        height: 100%;
+        width: 100%;
+        color: #909a9c;
+        font-size: 24px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      &.active,
+      &:hover{
+        background-color: #555;
+      }
+    }
+  }
+  .middle-users {
+    @extend %extend_message_float;
+    background-color: rgba(255,255,255,.6);
+    width: nth($message-page-parts-widths,2);
+    overflow: auto;
+    @include user-select(none);
+    .user-abs{
+      width: 100%;
+      height: 70px;
+      margin-bottom: 1px;
+      background-color: rgba(255,255,255,.3);
+      &.active{
+        box-shadow: inset 0 0 7px 1px rgba(255,0,0,.4);
+      }
+      .left-content{
+        float: left;
+        position: relative;
+        height: inherit;
+        line-height: inherit;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 70px;
+      }
+      .right-content{
+        float: left;
+        position: relative;
+        height: inherit;
+        width:  nth($message-page-parts-widths,2) - 70px;
+
+        .txt{
+          display: block;
+          position: relative;
+          width: 100%;
+          height: 70px * 0.5;
+          &.user-name {
+            height: 30px;
+            line-height: 50px;
+            font-size: 13px;
+            cursor: pointer;
+          }
+          &.latest-message-abs {
+            width: inherit;
+            height: 30px;
+            line-height: 30px;
+            font-size: 13px;
+            color: #555;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+          }
+        }
+      }
+      &.read-0{
+        .user-name{
+          &::after{
+            display: inline-block;
+            vertical-align: top;
+            content: "有未读消息";
+            background-color: rgba(0,0,0,.2);
+            color: rgba(255,255,255,.8);
+            padding: 0 8px;
+            height: 20px;
+            font-size: 12px;
+            margin: 14px 0 0 10px;
+            line-height: 20px;
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+  .right-detail{
+    @extend %extend_message_float;
+    background-color: rgba(255,255,255,.55);
+    width: nth($message-page-parts-widths,3);
+    position: relative;
+    overflow: hidden;
+
+    .scroll-view{
+      height: 480px;
+      overflow: auto;
+      .message{
+        position: relative;
+        overflow: hidden;
+        padding: 20px 20px 0px 20px;
+        &::after{
+          display: block;
+          position: absolute;
+          word-break: keep-all;
+          top: 55px;
+          padding: 5px 10px;
+          background-color: rgba(255, 0, 0, 0.3);
+          color: #FEFFFF;
+        }
+        &.msg-receive.isread-0{
+          &::after{
+            content: '！未读';
+            font-size: 12px;
+            right: 160px;
+          }
+
+        }
+        &:last-child{
+          margin-bottom: 20px;
+        }
+        .time{
+          display: block;
+          position: relative;
+          font-size: 13px;
+
+          word-spacing: 1em;
+          width: 100%;
+          text-align: center;
+          color: #333;
+          margin-bottom: 10px;
+          &::before{
+            font-family: consolas;
+            content: "———————————————— ";
+            color: #666;
+          }
+          &::after{
+            font-family: consolas;
+            content: " ————————————————";
+            color: #666;
+          }
+        }
+        .user-content{
+          width: 70px;
+          box-sizing: border-box;
+          position: relative;
+          padding: 0 10px;
+          text-align: center;
+          &::after{
+            display: block;
+            content: attr(data-nickname);
+            position: relative;
+            width: auto;
+            font-size: 12px;
+            color: #fff;
+            margin: auto;
+            word-wrap: normal;
+            word-break: keep-all;
+            z-index: 20;
+          }
+
+        }
+        .msg-content{
+          margin: 5px 10px;
+          position: relative;
+          width: 450px;
+
+          box-sizing: border-box;
+          padding: 10px 15px;
+          font-size: 13px;
+          line-height: 1.7;
+          //background-color: rgba(255,255,255,.4);
+
+          text-align: justify;
+          box-shadow: 3px 2px 7px rgba(0,0,0,.2);
+          .link{
+            color: $linkColor;
+          }
+          &::before{
+            content: "";
+            display: block;
+            position: absolute;
+            top:15px;
+            border-bottom: 8px solid transparent;
+            border-top: 8px solid transparent;
+            //opacity: 0.4;
+          }
+        }
+        &.msg-receive{
+          .user-content{
+            float: left;
+
+          }
+          .msg-content{
+            float: left;
+            color: $font-color;
+            background-color: #FEFFFF;
+            &::before{
+              left: -10px;
+              border-right: 10px solid #FEFFFF;
+            }
+          }
+        }
+        &.msg-send{
+          .user-content{
+            float: right;
+
+          }
+          .msg-content{
+            float: right;
+            color: #FEFFFF;
+            background-color: #975CE0;
+            a{
+              color: #FEFFFF;
+              text-decoration: underline;
+              cursor: pointer;
+              &:hover{
+                color:#dedede;
+              }
+            }
+            &::before{
+              right: -10px;
+              border-left: 10px solid #975CE0;
+            }
+          }
+        }
+      }
+    }
+    $message-editor-height: 70px;
+    .m-editor{
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-color: transparent;
+      border-top: 1px solid rgba(0,0,0,.1);
+      height: $message-editor-height;
+      .text-area{
+        display: inline-block;
+        vertical-align: top;
+        margin: 10px;
+        position: relative;
+        font-size: 14px;
+        line-height: 1.7;
+        width: nth($message-page-parts-widths,3) - 150px;
+        height: $message-editor-height - 20px;
+        box-sizing: border-box;
+        padding: 5px 10px;
+        resize: none;
+        z-index: 20;
+        &:focus{
+          outline: none;
+          border-color: $color_link_blue;
+          box-shadow: 0 0 6px $color_link_blue;
+        }
+      }
+      .msg-submit{
+        display: inline-block;
+        vertical-align: top;
+        margin: 15px auto 0 auto;
+        box-sizing: border-box;
+        padding:  0 20px;
+        width: 110px;
+        border-radius: 0;
+      }
+    }
+  }
+}

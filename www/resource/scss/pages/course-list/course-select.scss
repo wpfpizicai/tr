@@ -1,0 +1,43 @@
+$course_nav_item_padding: 0 15px;
+$course_nav_item_margin: 0 3px;
+$course_nav_item_height: 35px;
+
+label {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+
+  line-height: $course_nav_item_height;
+  height: $course_nav_item_height;
+  padding: $course_nav_item_padding;
+  margin: $course_nav_item_margin;
+  cursor: pointer;
+
+
+  @include transition(all ease .2s);
+
+  &:hover{
+    color: $white;
+    background-color: $color_oslo_gray_approx;
+  }
+}
+
+input[type='checkbox'] {
+  display: none;
+
+
+  &:checked + label,
+  &[checked='checked'] + label{
+
+    border-radius: $border_radius_square;
+
+    color: $white;
+
+    background-color: $color_red_approx;
+    &:hover {
+      background-color: darken($color_red_approx, 5);
+    }
+
+  }
+
+}

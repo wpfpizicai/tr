@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+    <link rel="stylesheet" href="/resource/css/user-message.css"/>
+
+</head>
+<body>
+<%- include ../header.ejs %>
+<div class="container">
+    <div class="message-container">
+        <div class="left-part">
+            <div class="menu-item active">
+                <a class="iconfont">&#xe60a;</a>
+            </div>
+            <div class="menu-item">
+                <a class="iconfont">&#xe60d;</a>
+            </div>
+        </div>
+        <div class="middle-users" id="middle_users_view">
+
+            <% msgs.forEach(function(m){ %>
+            <section class="user-abs read-<%= m.isread %>" data-from-id="<%- m.otherid %>">
+                <div class="left-content">
+                    <div class="user-head-icon user-head-<%=m.otheravator || 1 %>"></div>
+                </div>
+
+                <div class="right-content">
+                    <a class="txt user-name"><%= m.othernickname %></a>
+
+                    <div class="txt latest-message-abs"><%= m.title %></div>
+                </div>
+            </section>
+            <% }) %>
+        </div>
+        <div class="right-detail">
+            <div class="scroll-view" id="msg_detail_view">
+
+            </div>
+
+            <section class="m-editor hide">
+                <textarea class="text-area" name="" id="msg_editor" placeholder="在这里输入你要发送的内容"></textarea>
+                <span class="btn btn-green msg-submit" id="msg_submit" data-avator="<%-userInfo.avator|| 1%>" data-user-id="<%-userInfo.id%>"
+                      data-nickname="<%-userInfo.nickname%>">发送</span>
+            </section>
+        </div>
+    </div>
+</div>
+<%- include ../footer.ejs %>
+<script>seajs.use('js/user/message');</script>
+<script type="text/html">
+    {msgs:[
+    "messageid": 2,
+    "nickname": "tjuwpf@163.com",
+    "fromid": 1,
+    "title": "我是标题2",
+    "isread" : false,
+    "updatetime": "Aug 27, 2015 7:34:34 PM"]}
+</script>
+<script type="text/html" id="template_left" >
+
+
+
+</script>
+<script type="text/html" id="template_right">
+
+</script>
+</body>
+</html>

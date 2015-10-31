@@ -1,0 +1,93 @@
+/*
+Error: Undefined variable: "$color_font".
+        on line 23 of ./scss/pages/user-setting/user-setting-layout.scss
+
+18:       height: inherit;
+19:       line-height: 55px;
+20:       font-size: 14px;
+21:       box-sizing: border-box;
+22:       padding-left: 50px;
+23:       color: $color_font;
+24:       @include transition(all ease-out .15s);
+25:       &:hover {
+26:         text-decoration: none;
+27:         color: $color_guardsman_red_approx;
+28:         box-shadow: 0 0 5px #aaa;
+
+Backtrace:
+./scss/pages/user-setting/user-setting-layout.scss:23
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/script/tree/variable.rb:49:in `_perform'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/script/tree/node.rb:50:in `perform'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `map'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `map'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `map'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/engine.rb:379:in `_render_with_sourcemap'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/engine.rb:296:in `render_with_sourcemap'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:293:in `watch'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/plugin.rb:108:in `method_missing'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:384:in `watch_or_update'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:51:in `process_result'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/exec/base.rb:52:in `parse'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/lib/sass/exec/base.rb:19:in `parse!'
+C:/Heroku/ruby-1.9.2/lib/ruby/gems/1.9.1/gems/sass-3.4.16/bin/sass:13:in `<top (required)>'
+C:/Heroku/ruby-1.9.2/bin/sass:23:in `load'
+C:/Heroku/ruby-1.9.2/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$color_font\".\A         on line 23 of ./scss/pages/user-setting/user-setting-layout.scss\A \A 18:       height: inherit;\A 19:       line-height: 55px;\A 20:       font-size: 14px;\A 21:       box-sizing: border-box;\A 22:       padding-left: 50px;\A 23:       color: $color_font;\A 24:       @include transition(all ease-out .15s);\A 25:       &:hover {\A 26:         text-decoration: none;\A 27:         color: $color_guardsman_red_approx;\A 28:         box-shadow: 0 0 5px #aaa;"; }

@@ -1,0 +1,69 @@
+<!Doctype html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+    <link rel="stylesheet" href="/resource/css/forget.css">
+    <link rel="stylesheet" href="/resource/css/user-forget.css">
+</head>
+<body>
+<%- include ../header.ejs %>
+<div class="container">
+    <div class="my-wrap">
+        <div class="header">
+            <h1>忘记密码</h1>
+        </div>
+        <div class="my-form">
+            <div class="js-forgotpwd-form-wrap">
+                <h3>通过注册邮箱链接重设密码</h3>
+
+                <form id="js-forgot-form" autocomplete="off">
+                    <div class="input-group">
+                        <input type="text" name="email" data-validate="email" class="g-iptipt-email"
+                               placeholder="请输入注册邮箱">
+
+                        <p class="tips"></p>
+                    </div>
+                    <div class="form-control-verify">
+                        <input type="text" name="verify" maxlength="4" class="g-ipt" placeholder="请输入验证码">
+                        <img src="/user/getcode?1430661770679" alt="验证码" title="验证码">
+                        <span class="js-change-verify-code">看不清<br>换一张</span>
+
+                        <p class="tips"></p>
+                    </div>
+                    <div class="input-group">
+                        <p class="tips" id="js-g-forgot-error">&nbsp;</p>
+
+                        <div class="btn-wrapper">
+                            <button type="button" id="js-forgot-submit" class="btn btn-green btn-block">提交</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class=" js-forgot-result forgot-send-result">
+                <div class="input-row">
+                    <i></i>
+
+                    <p>
+                        密码重设连接邮件已发送到您的邮箱<em></em><br>
+                        请注意查收并重新设置密码
+                    </p>
+
+                    <div class="btn-wrapper">
+                        <a href="/" class="btn btn-green link-btn btn-block">返回登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mmsg-box mmsg-box-info" style="margin-top: -23.5px; margin-left: -96.5px;">
+        <div class="mmsg-content"><i class="mmsg-icon"></i>
+
+            <p>资料修改成功！</p></div>
+        <div class="mmsg-background"></div>
+    </div>
+</div>
+<%- include ../footer.ejs %>
+<script>seajs.use('js/user/forget');</script>
+</body>
+</html>

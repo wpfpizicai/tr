@@ -1,0 +1,52 @@
+<!Doctype html>
+<html>
+<head>
+  <%- include ../meta.ejs %>
+  <link rel="stylesheet" href="/resource/css/forget.css">
+  <link rel="stylesheet" href="/resource/css/user-reset.css">
+</head>
+<body>
+  <%- include ../header.ejs %>
+  <div class="container">
+    <div class="my-wrap">
+      <div class="header">
+        <h1>重置密码</h1>
+      </div>
+      <div class="my-form">
+        <div class="js-forgotpwd-form-wrap">
+          <h3>请重新设置您的密码</h3>
+          <form id="js-reset-form" autocomplete="off">
+            <div class="input-group">
+              <input type="text" name="email" data-validate="email" class="g-ipt ipt-email" disabled value="<%=email%>">
+              <p class="tips"></p>
+            </div>
+            <div class="input-group">
+              <input type="password" name="password" data-validate="password" class="g-ipt ipt-pwd" autocomplete="off" placeholder="请输入密码">
+              <p class="rlf-tip-wrap"><span style="display: none;">请输入6-16位密码，区分大小写，不能使用空格</span></p>
+            </div>
+            <div class="input-group">
+              <input type="password" name="cfmpwd" class="g-ipt ipt-pwd ipt-cfpwd" placeholder="请再次输入密码" autocomplete="off">
+              <p class="rlf-tip-wrap"><span style="display:none">请再次输入密码</span></p>
+            </div>
+            <div class="form-control-verify">
+              <input type="text" name="verify" maxlength="4" class="g-ipt" placeholder="请输入验证码">
+              <img src="/user/getcode?1430661770679" alt="验证码" title="验证码">
+              <span class="js-change-verify-code">看不清<br>换一张</span>
+              <p class="tips"></p>
+            </div>
+            <div class="input-group">
+              <p class="tips" id="js-g-forgot-error">&nbsp;</p>
+              <div class="btn-wrapper">
+                <input type="button" id="js-reset-submit" class="btn btn-green btn-block" value="提交">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mmsg-box mmsg-box-info" style="margin-top: -23.5px; margin-left: -96.5px;"><div class="mmsg-content"><i class="mmsg-icon"></i><p>资料修改成功！</p></div><div class="mmsg-background"></div></div>
+  <%- include ../footer.ejs %>
+  <script>seajs.use('js/user/reset');</script>
+</body>
+</html>

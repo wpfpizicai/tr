@@ -1,0 +1,72 @@
+.g-range {
+  display: inline-block;
+  box-sizing: border-box;
+  padding-top: 3px;
+  vertical-align: middle;
+  position: relative;
+  min-width: 300px;
+  font-size: 0;
+  height: 33px;
+  $range_data_height: 7px;
+  .range-data {
+    display: inline-block;
+    position: relative;
+    height: 3*$range_data_height;
+    vertical-align: top;
+    font-size: 14px;
+    &::before {
+      content: attr(data-before);
+      display: block;
+      position: absolute;
+      width: 3px;
+      height: $range_data_height;
+      text-align: center;
+      text-indent: -6px;
+      background-color: $white;
+      top: $range_data_height;
+      left: 0;
+      line-height: 3;
+      z-index: 18;
+      font-size: 12px;
+    }
+    &:last-child {
+      &::after {
+        content: attr(data-after);
+        display: block;
+        position: absolute;
+        width: 3px;
+        height: 7px;
+        text-align: center;
+        text-indent: -6px;
+        background: transparent;
+        top: $range_data_height;
+        right: 0;
+        line-height: 3;
+        font-size: 12px;
+      }
+    }
+    label {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: inherit;
+      cursor: pointer;
+      padding-top: $range_data_height;
+      box-sizing: border-box;
+      &::before {
+        content: "";
+        display: block;
+        position:relative;
+        width: inherit;
+        height: $range_data_height;
+        background-color: #D7D9DA;
+      }
+    }
+    input[type='checkbox'] {
+      display: none;
+      &:checked + label::before {
+        background-color: #364356;
+      }
+    }
+  }
+}

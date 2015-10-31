@@ -1,0 +1,71 @@
+.rightFixedTip {
+  width: 40px;
+  height: 81px;
+  border: 1px solid $color_iron;
+  position: fixed;
+  bottom: 120px;
+  right: 0;
+  background-color: $white;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 0 5px $color_celeste;
+  .help {
+    cursor: pointer;
+    height: 30px;
+    text-align: center;
+    line-height: 15px;
+    padding: 5px 0;
+    .txt {
+      color: $color_cornflower_blue;
+      font-size: 12px;
+      letter-spacing: 2px;
+      display: none;
+    }
+    &:hover {
+      .icon {
+        display: none;
+      }
+      .txt {
+        display: block;
+      }
+    }
+    .icon:before {
+      font-family: $font_6;
+      font-style: normal;
+      content: "\e616";
+      color: $color_cornflower_blue;
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+  .call {
+    cursor: pointer;
+    height: 30px;
+    text-align: center;
+    line-height: 15px;
+    padding: 5px 0;
+    border-top: 1px solid $color_iron;
+    .txt {
+      color: $color_crusta;
+      font-size: 12px;
+      letter-spacing: 2px;
+      display: none;
+    }
+    &:hover {
+      .icon {
+        display: none;
+      }
+      .txt {
+        display: block;
+      }
+    }
+    .icon:before {
+      font-family: $font_6;
+      font-size: 18px;
+      font-style: normal;
+      content: "\e615";
+      color: $color_crusta;
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+}

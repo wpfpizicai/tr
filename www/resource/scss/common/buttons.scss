@@ -1,0 +1,420 @@
+a {
+  outline: none;
+  &:link {
+    color: $color_chicago_approx;
+    color: $color_vulcan_approx;
+  }
+  &:visited {
+    color: $color_chicago_approx;
+    color: $color_vulcan_approx;
+  }
+  &:hover {
+    color: $color_brick_red_approx;
+    color: $color_guardsman_red_approx;
+  }
+  &:active {
+    color: $color_storm_dust_approx;
+    star: expression(this.onFocus=this.blur());
+    color: $color_guardsman_red_approx;
+  }
+  &.hidefocus {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  &.color-gray {
+    &:link {
+      color: $color_french_gray_approx;
+    }
+    &:visited {
+      color: $color_french_gray_approx;
+    }
+  }
+  &.btn-add-collection {
+    display: block;
+    background: $url_10 no-repeat 46px top;
+    height: 32px;
+    color: $color_manatee_approx;
+    text-align: center;
+    line-height: 35px;
+    &:hover {
+      background-position: 46px -44px;
+      color: $white;
+    }
+  }
+  &.btn-remove-collection {
+    background-position: 46px -88px;
+    color: $color_manatee_approx;
+    &:hover {
+      background-position: 46px -130px;
+    }
+  }
+  &.btn-green {
+    &:hover {
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+      color: $white;
+    }
+    &:link {
+      color: $white;
+    }
+    &:visited {
+      color: $white;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 200;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  text-decoration: none;
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: content-box;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  outline: none;
+  //Instead of the line below you could use @include user-select($select)
+  user-select: none;
+  &.hide {
+    display: none;
+  }
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+  &:focus {
+    color: $white;
+    text-decoration: none;
+  }
+  &.focus {
+    color: $white;
+    text-decoration: none;
+  }
+  &:active {
+    outline: 0;
+    background-image: none;
+  }
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+  &.disabled {
+    @extend %extend_7;
+  }
+}
+.btn[disabled] {
+  @extend %extend_7;
+}
+.btn-red {
+  color: $white;
+  background-color: $color_guardsman_red_approx;
+  border-color: $color_guardsman_red_approx;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s;
+  width: 138px;
+  height: 38px;
+  line-height: 38px;
+  font-size: 14px;
+  &:link {
+    color: $white;
+  }
+  &:visited {
+    color: $white;
+  }
+  &:hover {
+    @extend %extend_8;
+  }
+  &:focus {
+    @extend %extend_8;
+  }
+  &.focus {
+    @extend %extend_8;
+  }
+  &:active {
+    background-color: $color_bright_red_approx;
+    border-color: $color_bright_red_approx;
+  }
+  &.active {
+    background-color: $color_bright_red_approx;
+    border-color: $color_bright_red_approx;
+  }
+  &.disabled {
+    @extend %extend_9;
+    &:hover {
+      @extend %extend_9;
+    }
+    &:focus {
+      @extend %extend_9;
+    }
+    &.focus {
+      @extend %extend_9;
+    }
+    &:active {
+      @extend %extend_9;
+    }
+    &.active {
+      @extend %extend_9;
+    }
+  }
+}
+.btn-red[disabled] {
+  @extend %extend_9;
+  &:hover {
+    @extend %extend_9;
+  }
+  &:focus {
+    @extend %extend_9;
+  }
+  &.focus {
+    @extend %extend_9;
+  }
+  &:active {
+    @extend %extend_9;
+  }
+  &.active {
+    @extend %extend_9;
+  }
+}
+.btn-blue {
+  color: $white;
+  background-color: $color_lochmara_approx;
+  border-color: $color_lochmara_approx;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s;
+  width: 138px;
+  height: 38px;
+  line-height: 38px;
+  font-size: 14px;
+  &:link {
+    color: $white;
+  }
+  &:visited {
+    color: $white;
+  }
+  &:hover {
+    @extend %extend_10;
+  }
+  &:focus {
+    @extend %extend_10;
+  }
+  &.focus {
+    @extend %extend_10;
+  }
+  &:active {
+    background-color: $color_deep_cerulean_approx;
+    border-color: $color_deep_cerulean_approx;
+  }
+  &.active {
+    background-color: $color_deep_cerulean_approx;
+    border-color: $color_deep_cerulean_approx;
+  }
+  &.disabled {
+    @extend %extend_11;
+    &:hover {
+      @extend %extend_11;
+    }
+    &:focus {
+      @extend %extend_11;
+    }
+    &.focus {
+      @extend %extend_11;
+    }
+    &:active {
+      @extend %extend_11;
+    }
+    &.active {
+      @extend %extend_11;
+    }
+  }
+}
+.btn-blue[disabled] {
+  @extend %extend_11;
+  &:hover {
+    @extend %extend_11;
+  }
+  &:focus {
+    @extend %extend_11;
+  }
+  &.focus {
+    @extend %extend_11;
+  }
+  &:active {
+    @extend %extend_11;
+  }
+  &.active {
+    @extend %extend_11;
+  }
+}
+.btn-green {
+  background-color: $color_malachite_approx;
+  border-color: $color_malachite_approx;
+  border-style: solid;
+  border-width: 1px;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s;
+  width: 138px;
+  padding: 0 50px;
+  height: 38px;
+  line-height: 38px;
+  background: $color_chateau_green_approx;
+  border-bottom: 2px solid $color_chateau_green_approx;
+  color: $white;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-family: $font_1;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: 0.3s;
+  &:link {
+    color: $white;
+  }
+  &:visited {
+    color: $white;
+  }
+  &:hover {
+    @extend %extend_12;
+  }
+  &:focus {
+    @extend %extend_12;
+  }
+  &.focus {
+    @extend %extend_12;
+  }
+  &:active {
+    background-color: $color_salem_approx;
+    border-color: $color_salem_approx;
+  }
+  &.active {
+    background-color: $color_salem_approx;
+    border-color: $color_salem_approx;
+  }
+  &.disabled {
+    @extend %extend_13;
+    &:hover {
+      @extend %extend_13;
+    }
+    &:focus {
+      @extend %extend_13;
+    }
+    &.focus {
+      @extend %extend_13;
+    }
+    &:active {
+      @extend %extend_13;
+    }
+    &.active {
+      @extend %extend_13;
+    }
+  }
+}
+.btn-green[disabled] {
+  @extend %extend_13;
+  &:hover {
+    @extend %extend_13;
+  }
+  &:focus {
+    @extend %extend_13;
+  }
+  &.focus {
+    @extend %extend_13;
+  }
+  &:active {
+    @extend %extend_13;
+  }
+  &.active {
+    @extend %extend_13;
+  }
+}
+.btn-normal {
+  color: $color_rolling_stone_approx;
+  background-color: $white;
+  border-color: $color_iron_approx;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.3s;
+  width: 138px;
+  height: 38px;
+  line-height: 38px;
+  font-size: 14px;
+  &:link {
+    color: $color_rolling_stone_approx;
+  }
+  &:visited {
+    color: $color_rolling_stone_approx;
+  }
+  &:hover {
+    @extend %extend_14;
+  }
+  &:focus {
+    @extend %extend_14;
+  }
+  &.focus {
+    @extend %extend_14;
+  }
+  &:active {
+    background-color: $concrete;
+    border-color: $color_loblolly_approx;
+  }
+  &.active {
+    background-color: $concrete;
+    border-color: $color_loblolly_approx;
+  }
+  &.disabled {
+    @extend %extend_15;
+    &:hover {
+      @extend %extend_15;
+    }
+    &:focus {
+      @extend %extend_15;
+    }
+    &.focus {
+      @extend %extend_15;
+    }
+    &:active {
+      @extend %extend_15;
+    }
+    &.active {
+      @extend %extend_15;
+    }
+  }
+}
+.btn-normal[disabled] {
+  @extend %extend_15;
+  &:hover {
+    @extend %extend_15;
+  }
+  &:focus {
+    @extend %extend_15;
+  }
+  &.focus {
+    @extend %extend_15;
+  }
+  &:active {
+    @extend %extend_15;
+  }
+  &.active {
+    @extend %extend_15;
+  }
+}
+.btn-sm {
+  width: 78px;
+  height: 28px;
+  line-height: 28px !important;
+  font-size: 12px;
+}

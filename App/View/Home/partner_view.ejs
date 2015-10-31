@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+<head>
+  <%- include ../meta.ejs %>
+  <link rel="stylesheet" href="/resource/css/layout.css"/>
+</head>
+<body>
+  <%- include ../header.ejs %>
+  <% var partner = partner[0]%>
+  <div class="partner">
+    <div class="p-bg">
+      <div class="p-bg-banner" style="background-image:url(http://n-partner.oss-cn-beijing.aliyuncs.com/banner/<%- partner.banner%>);"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="p-preview">
+      <div class="p-logo">
+        <img src="http://n-partner.oss-cn-beijing.aliyuncs.com/logo/<%=partner.img%>" alt="" width="180" height="180">
+      </div>
+      <div class="p-summary">
+        <h3><%=partner.name%></h3>
+        <p><%=partner.introduction%></p>
+      </div>
+    </div>
+    <div class="p-courese ad-courses">
+      <div class="row">
+      <%courses.forEach(function(val){%>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <a href="/course/view/<%=val.id%>" target="_blank">
+            <span class="course-img">
+              <img src="http://n-course.oss-cn-beijing.aliyuncs.com/pic/<%= val.img %>" alt="<%= val.name %>">
+            </span>
+            <em><%= val.name %></em>
+          </a>
+          <p><%= val.source %> • <%= val.time %></p>
+        </div>
+      </div>
+      <%})%>
+    </div>
+    </div>
+  </div>
+  <%- include ../footer.ejs %>
+</body>
+</html>

@@ -1,0 +1,143 @@
+$black: #000;
+@import "../sassCore/function";
+
+#header {
+  display: block;
+  position: fixed;
+  top:0;
+  left: 0;
+  background: #222;
+  margin: 0;
+  width: 100%;
+  min-width: 1200px;
+  height: 60px;
+  padding: 0;
+  z-index: 100;
+  @include user-select(none);
+  &+.container{
+    margin-top: 60px;
+  }
+  .logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 60px;
+    height: inherit;
+    background-image: url('/resource/img/logo.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .header-nav {
+    display: inline-block;
+    vertical-align: top;
+    background: #222;
+    margin: 0;
+    width: auto;
+    height: inherit;
+    padding: 0;
+    @include user-select(none);
+    font-size: 0;
+    .nav-item {
+      display: inline-block;
+      a {
+        display: inline-block;
+        color: #999;
+        height: 60px;
+        line-height: 60px;
+        padding: 0 20px;
+        font-weight: normal;
+        font-size: 14px;
+        @include transition(all ease .1s);
+        border-left: 1px solid #222;
+        border-right: 1px solid #222;
+        &:hover {
+          color: #fff;
+          background-color: rgba(255, 255, 255, .19);
+        }
+      }
+      &.active{
+        a{
+          color: #fff;
+          background-color: #000;
+        }
+      }
+    }
+
+  }
+  .user-right{
+    display: inline-block;
+    height: inherit;
+    width: auto;
+    float: right;
+    right: 0;
+    top:0;
+    font-size: 0;
+    .link-item{
+      display: inline-block;
+      vertical-align: top;
+      width: auto;
+      height: inherit;
+
+      font-size: 14px;
+      .user-head-icon{
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+      }
+
+      a{
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        padding: 0 10px;
+        width: auto;
+        height: inherit;
+        color: #999;
+        line-height: 60px;
+        box-sizing: border-box;
+        min-width: 60px;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+          color: #fff;
+          background-color: rgba(255, 255, 255, .19);
+        }
+        &.message{
+          font-size: 30px;
+          &:hover{
+            text-decoration: none;
+          }
+          &::after{
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 5px;
+            width: 24px;
+            height: 24px;
+            box-sizing: border-box;
+            padding: 0 3px;
+            line-height: 24px;
+            border-radius: 13px;
+            font-size: 12px;
+            overflow: hidden;
+            text-align: center;
+            background-color: $color_guardsman_red_approx;
+            color: #fff;
+          }
+          &.unread{
+            &::after{
+              content: attr(data-msg);
+
+            }
+          }
+          &:not(.unread){
+            &::after{
+              content: none;
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

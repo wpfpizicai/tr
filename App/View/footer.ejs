@@ -1,0 +1,66 @@
+
+<div id="footer">
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            <div class="followus r">
+                <a class="followus-weixin" href="javascript:;" target="_blank" title="微信">
+                    <div class="flw-weixin-box"></div>
+                </a>
+                <a class="followus-weibo" href="http://weibo.com/u/5585851057" target="_blank" title="新浪微博"></a>
+                <a href="javascript:void(0);" class="sns-weixin" target="_blank" title="微信" style="display:none;"></a>
+            </div>
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <li><a href="/about" title="关于我们">关于我们</a></li>
+                        <li><a href="/about/joinus" title="人才招聘">加入我们</a></li>
+                        <li><a href="mailto:service@nebulafe.com" title="联系我们">联系我们</a></li>
+                        <li><a href="http://weibo.com/u/5585851057" title="关注我们" target="_blank">关注我们</a></li>
+                    </ul>
+                </div>
+                <p>© 2015 nebulafe.com 京ICP备15012781号-1</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="f-tools">
+    <a class="n-qq" href="javascript:;" title="QQ群：456021761，手机扫描二维码">
+        <em class="icon">&#xe600;</em>
+        <span class="qq-code"></span>
+    </a>
+</div>
+<!--[if lt IE 9]>
+<script> // 如果推荐语使用默认值，可以删除此 script 标签
+// IEDIE_HINT = '<p>自定义的提示语</p>';
+// 改为推荐 IE11，在 XP 系统下提示操作系统过时
+</script>
+<script src="/resource/js/widget/ie.min.js"></script>
+<![endif]-->
+<%if(userInfo){%>
+<input type="hidden" value="<%=userInfo.username%>" id="ne_user_name">
+<input type="hidden" value="<%=userInfo.id%>" id="ne_user_id">
+<input type="hidden" value="<%=userInfo.nickname%>" id="ne_user_nickname">
+<input type="hidden" value="<%=userInfo.avator%>" id="ne_user_avator">
+<%}%>
+<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://libs.baidu.com/underscore/1.3.3/underscore-min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="http://a.tbcdn.cn/libs/seajs/1.1.0/sea.js"></script>
+<script>
+    var root = location.protocol + "//" + location.host + "/resource/";
+    seajs.config({
+        base: root,
+        path: {
+            'js': root + 'js',
+            'css': root + 'css',
+            'img': root + 'img',
+            'swf': root + 'swf'
+        },
+        map: [
+            [/^(.*\/.*\/.*\.(?:css|js))(?:.*)$/i, '$1?20151018']
+        ]
+    });
+    seajs.use('js/index');
+    seajs.use('js/common');
+</script>
+

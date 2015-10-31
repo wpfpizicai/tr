@@ -1,0 +1,69 @@
+@import "../settings";
+
+.pageList {
+  min-height: 765px;
+  .listFilter .rightSearch {
+    float: right;
+    padding: 0;
+    margin-top: 0;
+    height: 36px;
+    .txt {
+      float: right;
+      line-height: 36px;
+      font-size: 18px;
+      margin-right: 10px;
+      font-weight: bold;
+      &:before {
+        content: "";
+        position: relative;
+        margin-right: -10px;
+        padding-right: 7px;
+        height: 24px;
+        border-right: 3px solid $color_havelock_blue;
+      }
+    }
+    .searchArea {
+      height: 36px;
+      position: relative;
+      float: right;
+      margin-right: 10px;
+      margin-top: 15px;
+      .icon {
+        font-family: $font_6;
+        font-size: 12px;
+        font-style: normal;
+        color: $color_santas_gray;
+        display: inline-block;
+        line-height: 36px;
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 0;
+        //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+        transition: all ease-out .2s;
+        -webkit-transition: all 0.2s ease-out 0s;
+        &:before {
+          font-size: 20px;
+          margin-left: -20px;
+        }
+      }
+      .disabled {
+        cursor: default;
+      }
+      .inputSearch {
+        width: 200px;
+        font-size: 14px;
+        padding-right: 40px;
+        &:focus {
+          outline: none;
+          + .icon {
+            color: $color_nevada;
+          }
+        }
+        &:hover + .icon {
+          color: $color_nevada;
+        }
+      }
+    }
+  }
+}

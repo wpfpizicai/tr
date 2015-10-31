@@ -1,0 +1,316 @@
+@import "../common";
+.pay-method-wrapper{
+
+  .pay-method{
+    display: block;
+    float: left;
+    margin: -1px 0 0 -1px;
+    width: auto;
+    line-height: 40px;
+    position: relative;
+
+    label{
+      border: 1px solid #ccc;
+      padding:0 18px;
+      position: relative;
+      cursor: pointer;
+    }
+    input{
+      display: none;
+      &:checked + label:before,
+      &[checked] + label:before{
+        content: "";
+        background: url(/resource/img/icon_radiocheck.png) no-repeat;
+        background-position: -60px 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 5;
+        margin-right: 0;
+        height: 18px;
+        width: 18px;
+      }
+      &:checked + label,
+      &[checked] + label{
+        border-color: #ffa00a;
+
+      }
+    }
+  }
+}
+
+
+.bank_box {
+  position: relative;
+  overflow: hidden;
+}
+
+.all-bank {
+  width: 600px;
+  padding: 1px 0 0 1px;
+  _padding-left: 2px;
+  overflow: hidden;
+}
+
+.li {
+  display: block;
+  float: left;
+  margin: -1px 0 0 -1px;
+  width: 134px;
+  height: 42px;
+  line-height: 40px;
+  .bank_select {
+    display: block;
+    padding: 5px 0;
+    position: relative;
+    border-style: solid;
+    border-width: 1px;
+    &:hover {
+      border-style: solid;
+      border-width: 1px;
+    }
+  }
+  &.current .bank_select {
+    border-style: solid;
+    border-width: 1px;
+  }
+  .bank_select {
+    border-color: #ddd;
+    z-index: 0;
+    text-align: center;
+    &:hover {
+      border-color: #ffa00a;
+      z-index: 1;
+      background-color: #fff;
+    }
+  }
+  &.current .bank_select {
+    border-color: #ffa00a;
+    z-index: 1;
+    background-color: #fff;
+  }
+  .bank_btn {
+    display: inline-block;
+    background-color: #FFF;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+}
+
+li{
+  display: block;
+  float: left;
+  margin: -1px 0 0 -1px;
+  width: auto;
+  position: relative;
+
+  label{
+    border: 1px solid #ccc;
+    padding:0 18px;
+    position: relative;
+    cursor: pointer;
+    height: 40px;
+  }
+  input{
+    display: none;
+    &:checked + label:before,
+    &[checked] + label:before{
+      content: "";
+      background: url(/resource/img/icon_radiocheck.png) no-repeat;
+      background-position: -60px 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 5;
+      margin-right: 0;
+      height: 18px;
+      width: 18px;
+    }
+    &:checked + label,
+    &[checked] + label{
+      border-color: #ffa00a;
+
+    }
+  }
+}
+
+.current .icon_check {
+  background: url(/resource/img/icon_radiocheck.png) no-repeat;
+  background-position: -60px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  margin-right: 0;
+  height: 18px;
+  width: 18px;
+}
+
+li .W_radio {
+  display: none;
+}
+
+.other_banklinkA, .other_banklinkB {
+  position: absolute;
+  left: 550px;
+}
+
+.other_banklinkA {
+  top: 25px;
+}
+
+.other_banklinkB {
+  bottom: 5px;
+}
+
+.other_banklinkA a, .other_banklinkB a {
+  color: #0A8CD2;
+}
+
+li {
+  .bank_ico {
+    display: block;
+    width: 120px;
+    height: 28px;
+    line-height: 28px;
+    background: url(/resource/img/bank_bg.png) no-repeat;
+    color: #07F;
+    margin-top: 3px;
+    font-weight: bold;
+    text-indent: -999em;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .bank_btn:hover .bank_ico {
+    cursor: pointer;
+  }
+  .bank_ICBC {
+    background-position: 0 -4px;
+  }
+  .bank_CMB {
+    background-position: 0 -42px;
+  }
+  .bank_CCB {
+    background-position: 0 -80px;
+  }
+  .bank_ABC {
+    background-position: 0 -118px;
+  }
+  .bank_BCOM {
+    background-position: 0 -156px;
+  }
+  .bank_CMBC {
+    background-position: 0 -194px;
+  }
+  .bank_SDB {
+    background-position: 0 -232px;
+  }
+  .bank_SPDB {
+    background-position: 0 -270px;
+  }
+  .bank_BOC {
+    background-position: 0 -308px;
+  }
+  .bank_BEA {
+    background-position: 0 -346px;
+  }
+  .bank_GDB {
+    background-position: 0 -384px;
+  }
+  .bank_CITIC {
+    background-position: 0 -422px;
+  }
+  .bank_HXB {
+    background-position: 0 -460px;
+  }
+  .bank_CIB {
+    background-position: 0 -498px;
+  }
+  .bank_GZRCC {
+    background-position: 0 -536px;
+  }
+  .bank_GZCB {
+    background-position: 0 -574px;
+  }
+  .bank_SHRCC {
+    background-position: 0 -612px;
+  }
+  .bank_POST {
+    background-position: 0 -650px;
+  }
+  .bank_CEB {
+    background-position: 0 -688px;
+  }
+  .bank_BOB {
+    background-position: 0 -726px;
+  }
+  .bank_CBHB {
+    background-position: 0 -764px;
+  }
+  .bank_BJRCB {
+    background-position: 0 -802px;
+  }
+  .bank_HSB {
+    background-position: 0 -840px;
+  }
+  .bank_PAB {
+    background-position: 0 -878px;
+  }
+  .bank_HZB {
+    background-position: 0 -916px;
+  }
+  .bank_NJCB {
+    background-position: 0 -954px;
+  }
+  .bank_SHB {
+    background-position: 0 -992px;
+  }
+  .bank_CZB {
+    background-position: 0 -1030px;
+  }
+  .bank_NBCB {
+    background-position: 0 -1068px;
+  }
+  .bank_CQCB {
+    background-position: 0 -1106px;
+  }
+  .bank_YCCCB {
+    background-position: 0 -1144px;
+  }
+}
+
+#js_appstyle_vip_v2_css_module_forms_select_bank {
+  height: 42px;
+}
+
+.n-pay{
+  margin: auto;
+  .row{
+    font-size: 14px;
+    overflow: hidden;
+    margin: auto;
+    width: 800px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: -1px;
+
+    .col{
+      float: left;
+    }
+    .col-left{
+      width: 150px;
+    }
+    .price{
+      b{
+        color: $color_brick_red_approx;
+      }
+      strike{
+
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.g-small-tip {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  line-height: 24px;
+  padding: 0 10px;
+  background-color: #fff3f1;
+  color: #f25c5e;
+  border: 1px solid #ffc0b6;
+  font-size: 12px;
+  border-radius: 1px;
+  text-align: left; }
+
+/*# sourceMappingURL=small_tip.css.map */

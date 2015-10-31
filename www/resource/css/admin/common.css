@@ -1,0 +1,160 @@
+html, body {
+  padding: 0;
+  text-align: center; }
+
+body > .container {
+  margin: 60px auto;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 900px; }
+
+@media screen and (min-width: 425px) {
+  html {
+    font-size: 40px; }
+    html body {
+      font-size: 14px; } }
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 20px; }
+    html body {
+      font-size: 14px; } }
+.nebulafe-header {
+  width: 100%;
+  height: 4.165rem;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #bbb;
+  z-index: 300; }
+  .nebulafe-header .nav {
+    display: block;
+    float: left;
+    height: inherit;
+    overflow: hidden; }
+    .nebulafe-header .nav .item {
+      display: block;
+      float: left;
+      height: inherit;
+      line-height: 4.165rem;
+      width: 8.33rem;
+      text-align: center; }
+      .nebulafe-header .nav .item a {
+        display: block;
+        width: inherit;
+        height: inherit;
+        color: #fff;
+        text-decoration: none;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease; }
+        .nebulafe-header .nav .item a:hover {
+          background-color: rgba(0, 0, 0, 0.1); }
+      .nebulafe-header .nav .item.active {
+        background-color: #f6f6f6; }
+
+.left-nav {
+  display: block;
+  position: fixed;
+  width: 100px;
+  background-color: #bbb; }
+  .left-nav .item {
+    display: block;
+    width: inherit;
+    height: 40px;
+    cursor: pointer;
+    line-height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+
+.my-uploader {
+  overflow: hidden;
+  width: 100%;
+  height: auto; }
+  .my-uploader .upload-wrapper {
+    display: block;
+    float: left;
+    width: 90px;
+    height: 37px;
+    cursor: pointer; }
+    .my-uploader .upload-wrapper .upload-btn {
+      display: block;
+      position: absolute;
+      margin-left: 15px;
+      top: 0;
+      left: 0; }
+    .my-uploader .upload-wrapper input[type='file'] {
+      display: block;
+      position: absolute;
+      padding: 20px;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      z-index: 200;
+      width: inherit;
+      height: inherit;
+      box-sizing: border-box;
+      cursor: pointer; }
+    .my-uploader .upload-wrapper:hover .upload-btn {
+      background-color: #2390b0; }
+  .my-uploader .upload-content {
+    display: block;
+    float: left;
+    line-height: 37px;
+    margin-left: 15px; }
+
+.upload-result {
+  margin: 10px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3); }
+  .upload-result > .row {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+    .upload-result > .row:last-child {
+      border-bottom: none; }
+  .upload-result .img-preview {
+    margin: 10px 0; }
+    .upload-result .img-preview .info {
+      float: left; }
+      .upload-result .img-preview .info:first-child {
+        width: 25%; }
+      .upload-result .img-preview .info:nth-child(2), .upload-result .img-preview .info:nth-child(3) {
+        width: 28%; }
+      .upload-result .img-preview .info:last-child {
+        width: 15%; }
+      .upload-result .img-preview .info span {
+        word-break: break-all; }
+    .upload-result .img-preview .thumbnail {
+      width: 100px; }
+
+@media screen and (min-width: 425px) {
+  html {
+    font-size: 40px; }
+    html body {
+      font-size: 14px; } }
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 20px; }
+    html body {
+      font-size: 14px; } }
+teacher-edit {
+  display: block;
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  top: 0;
+  left: 0; }
+  teacher-edit .teacher-edit {
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 600px;
+    box-sizing: border-box;
+    padding: 30px 10px;
+    height: auto;
+    overflow: hidden;
+    margin-top: 50vh;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #4E5D6C; }
+
+/*# sourceMappingURL=common.css.map */

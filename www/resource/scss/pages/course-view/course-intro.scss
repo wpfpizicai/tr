@@ -1,0 +1,144 @@
+.c-course-left {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 40px;
+  width: 920px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+  background-color: #fff;
+  font-size: 14px;
+  .row{
+    p{
+      margin-left: 2em;
+      line-height: 1.8em;
+    }
+    [data-user-generated="data-user-generated"] ~ div{
+      margin-left: 15px;
+    }
+  }
+
+  .c-course-outline {
+    p{
+      box-sizing: border-box;
+      padding-left: 50px;
+      cursor: pointer;
+      margin: 10px 0;
+      &:first-line{
+        color: #999;
+        color: $color_guardsman_red_approx;
+
+      }
+      &::before{
+        content: "";
+        background-color: #999;
+        display: block;
+        position: absolute;
+        margin: 10px 5px 0 -30px;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+      }
+      &:hover::before {
+        background-color: $color_guardsman_red_approx;
+      }
+    }
+  }
+
+}
+
+.c-course-right {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+
+  width: 280px;
+  font-size: 14px;
+  h2 {
+    font-size: 18px;
+    color: #000;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  & > .row {
+    margin: 0;
+  }
+  .col-sm-12,
+  .col-md-12 {
+    padding: 0;
+  }
+  .course-teacher {
+    margin: 20px 0 0 15px;
+    padding: 5px 20px 15px 20px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    clear: both;
+    overflow: hidden;
+
+    .c-course-teacher-intro{
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ddd;
+      &:last-child{
+        border: none;
+        padding-bottom: 5px;
+      }
+    }
+    .teacher-pic {
+      display: inline-block;
+      vertical-align: top;
+      width: 80px;
+      height: 80px;
+      background-position: center;
+      background-size: cover;
+      border-radius: 100px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      box-shadow: 0 0 1px #aaa;
+    }
+    .c-teacher-name {
+      display: inline-block;
+      vertical-align: top;
+      box-sizing: border-box;
+      padding-left: 10px;
+      padding-top: 10px;
+      height: 80px;
+      width: 260px - 80px - 50px;
+      margin-bottom: 15px;
+      a {
+        cursor: pointer;
+      }
+      p {
+        font-size: 12px;
+      }
+
+    }
+    .teacher-description {
+      font-size: 13px;
+      line-height: 1.7em;
+      color: #888;
+      &::before{
+        content: "简介：";
+        color: $color_guardsman_red_approx;
+      }
+    }
+  }
+  .reference,
+  .supports{
+    margin: 20px 0 0 15px;
+    padding: 5px 20px 15px 20px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    p{
+      padding-top: 10px;
+    }
+    a{
+      color: $color_brick_red_approx;
+      &:hover{
+        color: $color_guardsman_red_approx;
+        text-decoration: underline;
+      }
+    }
+  }
+}

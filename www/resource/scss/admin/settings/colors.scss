@@ -1,0 +1,124 @@
+//OPLUS UI STANDARD
+
+//botton_bg
+$color-main: #19bd9b; //主要绿色.eg确定
+$color-main-hover: #30cead; //主要绿色hover
+$color-delete: #f25c5e; //警示色.eg删除
+$color-delete-hover: #f56c6d; //警示色hover
+$color-setnew: #5b636c; //新建按钮色.eg新建店铺、店铺组、绑定硬件、新建自定义人群
+$color-setnew-hover: #667482; //新建按钮色hover
+
+//botton-line
+$color-cancel: #8b929b; //ghost botton. eg取消(按钮描边和文字色)
+$color-cancel-hover: $color-main;
+
+//icon
+$color-icon-main: #bcc3c5; //默认灰色.eg 关闭、修改、勾
+$color-icon-hover: #909a9c;
+$color-icon-link: #19bd9b;
+
+//graph
+$color-report-main: #40c1a6; //入店分析、客流趋势
+$color-report-compare: #c9cfd6,#1dcaa6,#a37954,#7dd318,#f39700,#43b3f3,#fa7389,#7589dd; //对比分析8种颜色(暂定，会修改)
+$color-portrait-media: #c9cfd6,#f39700,#ffd596; //媒体画像
+$color-portrait-consume: #c9cfd6,#43b3f3,#a4deff; //消费画像
+$color-portrait-basic: #c9cfd6,#1dcaa6,#9df2d1; //基本画像
+$color-portrait-cosmetic: #c9cfd6,#fa7389,#ffbfc9; //美妆
+$color-portrait-clothes: #c9cfd6,#7589dd,#b8c4f7; //服装
+
+//font
+$color-font-common: #323b3d; //普通文字色（大部分文字都适用，图表、表单等）
+$color-font-guide: #909a9c; //提示文字色，次要文字色（输入框提示文字等）
+$color-font-link: #359ce7; //文字链色
+$color-font-alert: #f25ce5; //警示色（错误提示文字）
+$color-font-emph: #485468; //强调色（报表数字、筛选结果的数字）
+$color-font-select: #19bd9b; //当前选中模块文字色（tab选中模块）
+$color-font-select-disable: #cccccc;//失效文字颜色
+
+//background
+//v 1.2.3版本配置 $color-bg-title: #f0f0f0; //标题模块的背景色
+//v 1.2.3版本配置 $color-bg-table-hover: #f5f5f5; //表单内hover色块
+
+//background
+$color-bg-content: #eef1f7; //卡片式布局，内容区背景色
+$color-bg-title: #f6f8f9; //列表表头的背景色
+$color-bg-table-hover: #f6f8f9; //列表内hover色块
+$color-bg-small-tip: #fff3f1; //小提示的背景色
+$color-left-menu-bg:#20282F;
+
+//border
+$color-border-select: #d4d9df; //用于表单、画像卡片的边框色
+$color-border-card-hover: #92a0ae; //鼠标划过整个卡片区域，外边框颜色变深
+$color-border-checkbox: #bcc2c9; //checkbox边框颜色
+
+
+
+//line
+// v 1.2.3 $color-border-select: #cccccc; //用于选项卡、表单、画像模块的描边
+
+//colors
+$white: #ffffff;
+$color_silver_chalice: #aaa;
+$color_cerulean: $color-font-link;
+$white: #ffffff;
+$color-delete: #f25c5e;
+$color_picton_blue: #359ce7;
+$color_shark: #262627;
+$color_bombay: #adb5bd;
+$color-main-hover: #27ccaa;
+$color_pewter: #959ea0;
+$color_font: #323b3d;
+$color_wild_sand: #f7f7f7;
+$color_gamboge: #eb9814;
+$color_lynch: #697c9d;
+$color_mine_shaft: #333;
+$color_neon_carrot: #fc9235;
+$color_mountain_mist: #999;
+$color_mirage: #182029;
+$color_bali_hai: #8496b3;
+$color_regent_gray: #839797;
+$color_bunker: #121615;
+$color_nobel: #b6b6b6;
+$color_trout: #4e515e;
+$color_geyser: #d2dae2;
+$color_casper: #a6bbd5;
+$color_nevada: #616e71;
+$color_loblolly: #bcc6cf;
+$color_feijoa: #9be17f;
+$color_cornflower_lilac: #fda7aa;
+$color_oslo_gray: #838f93;
+$color_silver: #bdbdbd;
+$color_emerald: $color-main;
+$color_manatee: #8b929b;
+$color_cornflower_blue: #6193e4;
+$color_bittersweet: #f25c5e;
+$color_portage: #75a9fd;
+$color_iron: #d3d7dd;
+$color_celeste: #ccc;
+$color_crusta: #f1822f;
+$color_secondary: #7c8b8a;
+$black_50: rgba(0, 0, 0, .5);
+$color_comet: #52616e;
+$color-main: #19bd9b;
+$color_viking: #66b3dd;
+$color_seagull: #80c4e9;
+$color_mantis: #6dc85f;
+$color_pastel_green: #81d577;
+$color_tan_hide: #ff9d59;
+$color_rajah: #ffac68;
+$color_tip: #f25c5e;
+$color_ghost: #c8ced6;
+$color_waterloo__90_2: rgba(118, 132, 154, 0.902);
+$color_waterloo__90_1961: rgba(118, 132, 154, 0.901961);
+$color_waterloo_: rgb(118, 132, 154);
+$color_porsche: #f1a86d;
+$color_gallery: #ebeced;
+$color_havelock_blue: #507cdd;
+$color_santas_gray: #9ba3af;
+$color_monza: #cf0309;
+$color_edward: #9daaab;
+$color_mountain_mist_85: rgba(144, 154, 156, 0.85);
+$color_link_blue: #359ce7;
+$color_help_content_bg: rgba(91, 99, 108, 0.9);
+
+

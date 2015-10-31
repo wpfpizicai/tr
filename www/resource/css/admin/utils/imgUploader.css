@@ -1,0 +1,60 @@
+.my-uploader {
+  overflow: hidden;
+  width: 100%;
+  height: auto; }
+  .my-uploader .upload-wrapper {
+    display: block;
+    float: left;
+    width: 90px;
+    height: 37px;
+    cursor: pointer; }
+    .my-uploader .upload-wrapper .upload-btn {
+      display: block;
+      position: absolute;
+      margin-left: 15px;
+      top: 0;
+      left: 0; }
+    .my-uploader .upload-wrapper input[type='file'] {
+      display: block;
+      position: absolute;
+      padding: 20px;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      z-index: 200;
+      width: inherit;
+      height: inherit;
+      box-sizing: border-box;
+      cursor: pointer; }
+    .my-uploader .upload-wrapper:hover .upload-btn {
+      background-color: #2390b0; }
+  .my-uploader .upload-content {
+    display: block;
+    float: left;
+    line-height: 37px;
+    margin-left: 15px; }
+
+.upload-result {
+  margin: 10px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3); }
+  .upload-result > .row {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+    .upload-result > .row:last-child {
+      border-bottom: none; }
+  .upload-result .img-preview {
+    margin: 10px 0; }
+    .upload-result .img-preview .info {
+      float: left; }
+      .upload-result .img-preview .info:first-child {
+        width: 25%; }
+      .upload-result .img-preview .info:nth-child(2), .upload-result .img-preview .info:nth-child(3) {
+        width: 28%; }
+      .upload-result .img-preview .info:last-child {
+        width: 15%; }
+      .upload-result .img-preview .info span {
+        word-break: break-all; }
+    .upload-result .img-preview .thumbnail {
+      width: 100px; }
+
+/*# sourceMappingURL=imgUploader.css.map */

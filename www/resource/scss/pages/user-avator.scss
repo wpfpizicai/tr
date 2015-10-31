@@ -1,0 +1,41 @@
+@import "user-setting";
+
+.right-container {
+  .my-wrap {
+    .my-form {
+      .input-row {
+        &.user-head-row {
+          .current-head {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            border-radius: 0;
+            background-size: contain;
+          }
+        }
+        .heads-pool{
+          display: inline-block;
+          font-size: 0;
+          width: 500px;
+          .heads{
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            margin:0 5px 5px 0 ;
+            background-size: contain;
+            border-radius: 0;
+            @for $i from 0 to 20 {
+              &.user-head-#{$i} {
+                background-image: url(http://n-user.oss-cn-beijing.aliyuncs.com/small/Fruit-#{$i}.png);
+              }
+            }
+            &.selected{
+              border-color: $color_guardsman_red_approx;
+              box-shadow: 0 0 5px $color_guardsman_red_approx;
+            }
+          }
+        }
+      }
+    }
+  }
+}

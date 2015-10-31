@@ -1,0 +1,173 @@
+//@extend-elements
+//original selectors
+//h1, h2, h3, h4, h5, h6
+%extend_1 {
+  font-size: 100%;
+  font-weight: normal;
+  font-family: $font_1;
+}
+
+//original selectors
+//#logo a, .logo a
+%extend_2 {
+  display: block;
+  height: 60px;
+  width: 140px;
+  background: $url_0 no-repeat center center;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+//original selectors
+//.header-signin a, .header-signup a
+%extend_3 {
+  display: block;
+  width: 60px;
+  font-size: 14px;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  color: $color_rolling_stone_approx;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: background-color 0.2s;
+}
+
+//original selectors
+//.page span, .page-disabled
+%extend_4 {
+  display: inline-block;
+  padding: 0 5px;
+  min-width: 20px;
+  height: 39px;
+  line-height: 39px;
+  font-size: 14px;
+  color: $color_ghost_approx;
+  text-align: center;
+}
+
+//original selectors
+//.layer-usercard-header dt, .layer-usercard-header dd
+%extend_5 {
+  float: right;
+  width: 245px;
+  padding-right: 20px;
+  color: $white;
+}
+
+//original selectors
+//.ipt[disabled], .ipt[readonly], .ipt.disabled
+%extend_6 {
+  cursor: default;
+  background-color: $color_athens_gray_approx;
+  opacity: 1;
+}
+
+//original selectors
+//.btn.disabled, .btn[disabled], fieldset[disabled] .btn
+%extend_7 {
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none;
+}
+
+//original selectors
+//.btn-red:hover, .btn-red:focus, .btn-red.focus
+%extend_8 {
+  color: $white;
+  background-color: $color_red_approx;
+  border-color: $color_red_approx;
+}
+
+//original selectors
+//.btn-red.disabled, .btn-red[disabled], .btn-red.disabled:hover, .btn-red[disabled]:hover, .btn-red.disabled:focus, .btn-red[disabled]:focus, .btn-red.disabled.focus, .btn-red[disabled].focus, .btn-red.disabled:active, .btn-red[disabled]:active, .btn-red.disabled.active, .btn-red[disabled].active
+%extend_9 {
+  cursor: default;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none;
+  background-color: $color_guardsman_red_approx;
+  border-color: $color_guardsman_red_approx;
+}
+
+//original selectors
+//.btn-blue:hover, .btn-blue:focus, .btn-blue.focus
+%extend_10 {
+  color: $white;
+  background-color: $color_cerulean_approx;
+  border-color: $color_cerulean_approx;
+}
+
+//original selectors
+//.btn-blue.disabled, .btn-blue[disabled], .btn-blue.disabled:hover, .btn-blue[disabled]:hover, .btn-blue.disabled:focus, .btn-blue[disabled]:focus, .btn-blue.disabled.focus, .btn-blue[disabled].focus, .btn-blue.disabled:active, .btn-blue[disabled]:active, .btn-blue.disabled.active, .btn-blue[disabled].active
+%extend_11 {
+  cursor: default;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none;
+  background-color: $color_lochmara_approx;
+  border-color: $color_lochmara_approx;
+}
+
+//original selectors
+//.btn-green:hover, .btn-green:focus, .btn-green.focus
+%extend_12 {
+  color: $white;
+  background-color: $color_malachite_approx;
+  border-color: $color_malachite_approx;
+}
+
+//original selectors
+//.btn-green.disabled, .btn-green[disabled], .btn-green.disabled:hover, .btn-green[disabled]:hover, .btn-green.disabled:focus, .btn-green[disabled]:focus, .btn-green.disabled.focus, .btn-green[disabled].focus, .btn-green.disabled:active, .btn-green[disabled]:active, .btn-green.disabled.active, .btn-green[disabled].active
+%extend_13 {
+  cursor: default;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none;
+  background-color: $color_malachite_approx;
+  border-color: $color_malachite_approx;
+}
+
+//original selectors
+//.btn-normal:hover, .btn-normal:focus, .btn-normal.focus
+%extend_14 {
+  color: $color_rolling_stone_approx;
+  background-color: $color_athens_gray_approx;
+  border-color: $color_pewter_approx;
+}
+
+//original selectors
+//.btn-normal.disabled, .btn-normal[disabled], .btn-normal.disabled:hover, .btn-normal[disabled]:hover, .btn-normal.disabled:focus, .btn-normal[disabled]:focus, .btn-normal.disabled.focus, .btn-normal[disabled].focus, .btn-normal.disabled:active, .btn-normal[disabled]:active, .btn-normal.disabled.active, .btn-normal[disabled].active
+%extend_15 {
+  cursor: default;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none;
+  background-color: $white;
+  border-color: $color_iron_approx;
+}
+
+//original selectors
+//.send-area-result dd a.questiontitle i, .send-area-result dd a.questiontitle em
+%extend_16 {
+  font-style: normal;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+//original selectors
+//.course-list li:hover, .course-list li.hover
+%extend_17 {
+  border-bottom: 2px solid $color_geyser_approx;
+  *border-bottom: 2px solid $color_geyser_approx;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 4px 8px $black_20;
+}
+
+//original selectors
+//.course-one .media-progress .progress-val, .course-one .media-progress .mask
+%extend_18 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 30px;
+}

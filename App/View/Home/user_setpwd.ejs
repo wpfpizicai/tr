@@ -1,0 +1,57 @@
+<!Doctype html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+
+    <!--<link rel="stylesheet" href="/resource/css/forget.css">-->
+    <link rel="stylesheet" href="/resource/css/user-setpwd.css"/>
+</head>
+<body>
+<%- include ../header.ejs %>
+<div class="container">
+    <%- include user_center_left.ejs %>
+    <div class="right-container">
+        <div class="my-wrap">
+            <div class="my-form">
+                <div class="js-setpwd-form-wrap">
+                    <div class="input-row">
+                        <div class="label"><h1>修改密码</h1></div>
+                    </div>
+                    <form id="js-forgot-form" autocomplete="off">
+                        <div class="input-row">
+                            <span class="label">原密码</span>
+                            <input type="password" name="orgin" id="origin_pwd" data-validate="email" class="g-ipt ipt-origin-pwd" placeholder="请输入原始密码">
+                            <i></i>
+                            <p class="tips"></p>
+                        </div>
+                        <div class="input-row">
+                            <span class="label">新密码</span>
+                            <input type="password" name="new" id="new_pwd" data-validate="email" class="g-ipt ipt-new-pwd" placeholder="请输入新密码">
+                            <i></i>
+                            <p class="tips"></p>
+                        </div>
+                        <div class="input-row">
+                            <span class="label">确认新密码</span>
+                            <input type="password" name="new-again" id="new_pwd_again" data-validate="email" class="g-ipt ipt-new-pwd" placeholder="请确认新密码">
+                            <i></i>
+                            <p class="tips"></p>
+                        </div>
+
+                        <div class="input-row">
+                            <p class="tips" id="js-g-forgot-error">&nbsp;</p>
+                            <div class="label"></div>
+                            <div class="btn-wrapper">
+                                <button type="button" id="js-set-submit" class="btn btn-green btn-block" value="修改密码" data-id="<%=userInfo.id%>">修改密码</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ../footer.ejs %>
+<script>seajs.use('js/user/setpwd');</script>
+</body>
+</html>

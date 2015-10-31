@@ -1,0 +1,16 @@
+$font_size_base : 14px;
+.bt3-row{
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  font-size: $font_size_base;
+
+  @import "course-select";
+
+  &:first-child::before {
+    content: '选择课程类别：';
+
+    color: $color_oslo_gray_approx;
+    margin-right: 10px;
+  }
+}

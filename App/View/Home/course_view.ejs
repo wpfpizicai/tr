@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+    <link href="/resource/css/video.css" rel="stylesheet">
+    <link rel="stylesheet" href="/resource/css/course-view.css"/>
+    <link rel="stylesheet" href="/resource/module/video-js/video-js.css"/>
+</head>
+<body>
+<%- include ../header.ejs %>
+<% var partner = partner[0];var resource = resource[0]%>
+<div class="container course-view-page">
+    <div class="g-page-way">
+        <a class="g-page-way-node">课程</a>
+        <a class="g-page-way-node"><%=course.tag%></a>
+        <span class="g-page-way-node"><%=course.name%></span>
+    </div>
+    <div class="c-course">
+        <div class="c-course-preview">
+            <div class="c-video-container">
+                <video class="video-js vjs-default-skin c-video-preview" height="340" width="100%" data-js="previewVideo" preload="metadata"
+                       controls="controls" poster="<%-resource.poster%>"
+                       data-setup='{}'>
+                    <source type="video/webm" src="<%-resource.webmv%>">
+                    <source type="video/mp4" src="<%-resource.m4v%>">
+                    <source type="video/ogv" src="<%-resource.ogv%>">
+                </video>
+            </div>
+            <div class="c-course-preview-info">
+                <div class="c-course-info-item">
+                    <a href="/partner/view/<%=partner.id%>" class="c-partner-logo"><img
+                            src="http://n-partner.oss-cn-beijing.aliyuncs.com/logo_long/<%=partner.long_img%>"
+                            alt="<%=partner.name%>" title="课程提供方：<%=partner.name%>"></a>
+                </div>
+                <div class="c-course-info-item">
+                    <div class="c-course-last-time">
+                        <span class="c-course-info-label">课程时长</span>
+                        <span class="txt"><%=course.total_time%></span>
+                    </div>
+                </div>
+                <div class="c-course-info-item">
+                    <div class="c-course-tag-intro">
+                        <span class="c-course-info-label">课程分类</span>
+                        <span class="txt"><%=course.tag%></span>
+                    </div>
+                </div>
+            </div>
+            <div class="c-course-preview-manu">
+                <div class="c-course-preview-like-btn" id="focus-btn" data-focused="<%=course.focus%>" data-id="<%=course.id%>">
+                    <span class="txt"></span>
+                </div>
+                <a class="c-course-preview-learn-now" data-href="/course/video/<%=course.id%>"
+                   id="start_learn">
+                    <span class="txt">进入学习</span>
+                </a>
+            </div>
+        </div>
+
+
+        <!--<h1><%=course.name%></h1>-->
+        <!--<a class="btn btn-success" href="javascript:void(0);" data-href="/course/video/<%=course.id%>"-->
+        <!--id="start_learn">进入学习</a>-->
+
+        <!--<h3>隶属于&nbsp;<a><%=course.tag%></a></h3>-->
+        <div class="c-course-left">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <h2>课程概述</h2>
+
+                    <p><%=course.description%></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <h2>课程介绍</h2>
+
+                    <p><%=course.introduction%></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 c-course-outline">
+                    <h2>授课大纲</h2>
+
+                    <div><%-course.outline%></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <h2>先修知识</h2>
+
+                    <p><%=course.prelearn%></p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <h2>常见问题</h2>
+                    <p>
+                        <%=course.faq%>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--<hr class="c-course-divider">-->
+
+
+        <!--<hr class="c-course-divider">-->
+        <div class="c-course-right">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+
+
+                    <div class="course-teacher">
+                        <h2>教师</h2>
+                        <% if (!teachers || teachers.length == 0) {%>
+
+                            <p data-user-generated="data-user-generated"></p>
+                            <div style="margin-top: 10px">暂无</div>
+                        <%}%>
+                        <%teachers.forEach(function(teacher){%>
+                        <div class="col-sm-12 col-md-12 c-course-teacher-intro">
+                            <a href="#" class="teacher-pic">
+                                <img
+                                    src="http://n-teacher.oss-cn-beijing.aliyuncs.com/cft/<%=teacher.img%>" width="80"
+                                    height="114">
+                            </a>
+                            <div class="c-teacher-name">
+                                <a><%=teacher.name%></a>
+                                <p> <%=teacher.career%></p>
+                            </div>
+
+
+                            <br class="clear">
+
+                            <div class="teacher-description autowrap"><%=teacher.description%></div>
+                        </div>
+                        <%})%>
+                    </div>
+                </div>
+            </div>
+            <div class="row reference">
+                <div class="col-sm-12 col-md-12">
+                    <h2>参考资料</h2>
+
+                    <p data-user-generated="data-user-generated"></p>
+                    <%course.reference.split("|").forEach(function(val){%>
+                    <div><%=val%></div>
+                    <%})%>
+                    <p></p>
+                </div>
+            </div>
+            <div class="row supports">
+                <div class="col-sm-12 col-md-12">
+                    <h2>辅助资料</h2>
+
+                    <p data-user-generated="data-user-generated"></p>
+                    <% var cls = "btn-default"; var url = "javascript:void(0);"%>
+                    <%if(userInfo){%> <% cls = "btn-info"; url = course.material %> <%}%>
+                    <%if(!course.material){%>
+                    <span class=" ">暂无</span>
+                    <% }else{ %> <a class=" " href="<%-url%>" tagrget="_blank"
+                                    id="learn_mater"><%=course.name%></a><%}%>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="video_container"></div>
+    <input type="hidden" id="c_id" name='cid' value="<%=course.id%>">
+    <input type="hidden" id="c_needpay" name='needpay' value="<%=course.needpay%>">
+    <input type="hidden" id="c_haspay" name='haspay' value="<%=course.haspay%>">
+    <input type="hidden" id="c_payvalid" name='payvalid' value="<%=course.payvalid%>">
+</div>
+<%- include ../footer.ejs %>
+<script>seajs.use('js/course/view.js')</script>
+<script src="/resource/module/video-js/video.js"></script>
+</body>
+</html>

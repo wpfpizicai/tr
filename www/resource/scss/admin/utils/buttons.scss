@@ -1,0 +1,385 @@
+@import "../settings";
+.btn {
+  height: 34px;
+  line-height: 34px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 14px;
+  width: 80px;
+  letter-spacing: 6px;
+  text-indent: 6px;
+  background-color: $color_emerald;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid $color_emerald;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 20px;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
+  &:hover {
+    background-color: $color_emerald;
+    border: 1px solid $color_emerald;
+  }
+}
+
+.btn2 {
+  height: 34px;
+  line-height: 34px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 14px;
+  width: 80px;
+  letter-spacing: 4px;
+  background-color: $white;
+  color: $color_manatee;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid $color_manatee;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 20px;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
+  &:hover {
+    background-color: $white;
+    border: 1px solid $color_cornflower_blue;
+    color: $color_cornflower_blue;
+  }
+}
+
+.btn3 {
+  height: 34px;
+  line-height: 34px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 14px;
+  width: 80px;
+  letter-spacing: 4px;
+  background-color: $color-delete;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid $color-delete;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 20px;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.2s ease-out 0s;
+  &:hover {
+    background-color: $color_bittersweet;
+    border: 1px solid $color_bittersweet;
+  }
+}
+
+.addBtn {
+  height: 34px;
+  line-height: 34px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 14px;
+  background-color: $color_cornflower_blue;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid $color_cornflower_blue;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 20px;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
+  &:before {
+    font-family: $font_6;
+    font-style: normal;
+    content: "\e600";
+    color: $white;
+    font-size: 12px;
+    line-height: 34px;
+    display: inline-block;
+    width: 20px;
+    position: relative;
+    top: -1px;
+  }
+  &:hover {
+    background-color: $color_portage;
+    border: 1px solid $color_portage;
+  }
+}
+
+.radiusBtn {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  width: 105px;
+  text-align: center;
+  font-size: 14px;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  border-style: solid !important;
+  margin-left: 5px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 25px;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
+  &:before {
+    font-family: $font_6;
+    font-style: normal;
+    color: $white;
+    font-size: 16px;
+    line-height: 34px;
+    display: inline-block;
+    width: 20px;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+    -webkit-font-smoothing: antialiased;
+  }
+  &.mid {
+    width: 60px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  &.square {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 3px;
+  }
+  &.small {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+  }
+  &.tiny {
+    width: auto;
+    height: 35px;
+    padding: 0 10px;
+    line-height: 35px;
+  }
+  &.auto {
+    height: 40px;
+    width: auto;
+    line-height: 40px;
+    padding: 0 15px;
+  }
+  &.short-height{
+    height: 34px;
+    line-height: 34px;
+    font-size: 12px;
+  }
+  &.style_0 {
+    background-color: $color_trout;
+    &:hover {
+      background-color: $color_comet;
+    }
+  }
+  &.style_1 {
+    background-color: $color-main;
+    &:hover {
+      background-color: $color-main-hover;
+    }
+  }
+  &.style_1_against {
+    background-color: $white;
+    color: $color-main;
+    border: 1px solid $color_iron;
+    &:hover {
+      background-color: $color-main;
+      color: $white;
+      border: 1px solid $color-main;
+    }
+  }
+  &.style_2 {
+    background-color: $color_viking;
+    &:hover {
+      background-color: $color_seagull;
+      border-color: $color_seagull;
+    }
+  }
+  &.style_3 {
+    background-color: $color_mantis;
+    &:hover {
+      background-color: $color_pastel_green;
+      border-color: $color_pastel_green;
+    }
+  }
+  &.style_4 {
+    background-color: $color_cornflower_blue;
+    &:hover {
+      background-color: $color_portage;
+      border-color: $color_portage;
+    }
+  }
+  &.style_5 {
+    background-color: $color_tan_hide;
+    &:hover {
+      background-color: $color_rajah;
+      border-color: $color_rajah;
+    }
+  }
+  &.style_6 {
+    background-color: $color_setnew;
+    &:hover {
+      background-color: $color_setnew-hover;
+    }
+  }
+  &.style_7 {
+    background-color: $color_emerald;
+    &:hover {
+      background-color: $color_emerald;
+    }
+  }
+  &.style_8 {
+    background-color: $color_tip;
+    &:hover {
+      background-color: $color-delete;
+    }
+  }
+  &.style_9 {
+    color: $color_comet;
+    background-color: $white;
+
+    &:hover {
+      color: $white;
+      background-color: $color_comet;
+    }
+  }
+  &.style_11 {
+    background-color: #ADB8B9;
+    color: $color_font;
+    &:hover {
+
+      background-color: #C0C9CB;
+      color: $color_font;
+    }
+  }
+  &.style_12 {
+    background-color: $color_gallery;
+    color: $color_font;
+    &:hover {
+
+      background-color: #C0C9CB;
+      color: $color_font;
+    }
+  }
+  &.checkBtn {
+    width: auto;
+    min-width: 24px;
+    height: 25px;
+    line-height: 26px;
+    padding: 0 13px;
+    font-size: 12px;
+    @extend .style_12;
+    &.checked {
+      color: $white;
+      @extend .style_1;
+    }
+  }
+  &.save-crowd {
+    @extend .style_1;
+    @extend .square;
+    @extend .auto;
+    float: right;
+    height: 30px;
+    padding: 0 15px 0 10px;
+    font-size: 12px;
+    line-height: 28px;
+    &:before {
+      content: $icon-yonghu01;
+      font-size: 14px;
+      height: 28px;
+    }
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -3px;
+    }
+  }
+  &.link-btn {
+    border: none;
+    color: $color-font-link;
+    font-size: 14px;
+    &:hover {
+      background: transparent;
+      &::before {
+        text-decoration: underline;
+      }
+      text-decoration: underline;
+
+    }
+    &::before {
+      font-size: 14px;
+      display: inline;
+      color: inherit;
+    }
+    &::after {
+      display: inline-block;
+      vertical-align: middle;
+      @extend %extend_iconfont;
+      color: inherit;
+      margin-top: -5px;
+      font-size: 10px;
+    }
+    &.showing {
+      &::before {
+        content: "收起 " !important;
+
+      }
+      &::after {
+        content: $icon-top;
+      }
+    }
+    &.hiding {
+      &::before {
+        content: "人群自定义 " !important;
+      }
+      &::after {
+        content: $icon-down;
+      }
+
+    }
+
+  }
+  &.ghostBtn {
+    background-color: transparent;
+    color: $color-main;
+    border: 1px solid $color-main-hover;
+    &.gray-border {
+      border-color: $color_mountain_mist;
+      &:hover {
+        @extend %extend_9;
+      }
+    }
+    &:hover {
+      @extend %extend_9;
+    }
+    &.cancel {
+      background-color: $white;
+      border-color: $color-cancel;
+      color: $color-cancel;
+      &:hover {
+        background-color: $white;
+        border-color: $color-main-hover;
+        color: $color-main;
+      }
+    }
+  }
+}
+
+.back-button:before {
+  content: "\e619";
+  font-family: $font_6;
+  font-size: 16px;
+  padding-right: 5px;
+  font-style: normal;
+  cursor: pointer;
+  color: inherit;
+}
+
+.button-wrapper .radiusBtn {
+  margin-right: 20px;
+  margin-left: 0;
+}

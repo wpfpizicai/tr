@@ -1,0 +1,14 @@
+@import "../settings/colors";
+.g-small-tip{
+  display: inline-block;
+  width: auto;
+  height: auto;
+  line-height: 24px;
+  padding: 0 10px;
+  background-color: $color-bg-small-tip;
+  color: $color-delete;
+  border: 1px solid #ffc0b6;
+  font-size: 12px;
+  border-radius: 1px;
+  text-align: left;
+}

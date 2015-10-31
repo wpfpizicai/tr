@@ -1,0 +1,54 @@
+@import "extends";
+.checkBox {
+  display: none;
+  &[checked='checked'] + .labelForCheckBox:before,
+  &:checked + .labelForCheckBox:before {
+    @extend %extend_checkBox;
+  }
+
+  &[checked='checked'] + .labelForCheckBox,
+  &:checked + .labelForCheckBox{
+    border-color: $color-main;
+    background-color: $color-main;
+  }
+}
+
+.checkBoxWrapper {
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  cursor:default;
+}
+
+.labelForCheckBox {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 15px;
+  width: 12px;
+  height: 12px;
+  padding-right: 1px;
+  margin-top: 12px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  border: 1px solid $color-border-checkbox;
+  background-color: transparent;
+  overflow: hidden;
+  text-align: center;
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-top: -5px;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 2px;
+    background-color: transparent;
+    overflow: hidden;
+    text-align: center;
+  }
+}
+
+.labelTxt {
+  padding-left: 6px;
+}
+

@@ -1,0 +1,761 @@
+@charset "utf-8";
+@import "common/fonts";
+@import "iconfont";
+@import "common/urls";
+@import "common/sizes";
+@import "common/colors";
+@import "common/extends";
+@import "sassCore/function";
+@import "sassCore/base";
+@import "partial";
+@import "utils/alert";
+@import "common/heads";
+@import "common/buttons";
+
+body{
+  overflow: auto;
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei", sans-serif;
+
+}
+body > .container {
+  padding-top: 20px;
+  min-height: calc(100vh - 100px - 60px);
+  margin-bottom: 20px;
+}
+
+body{
+  min-width: 1200px;
+}
+#header {
+  min-width: 1200px;
+}
+
+@include min-screen(425px){
+  body{
+    min-width: 1200px;
+  }
+  #header {
+    min-width: 1200px;
+
+  }
+}
+.clearfix {
+  *zoom: 1;
+  &:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+.l {
+  float: left;
+}
+
+.r {
+  float: right;
+}
+
+.clear {
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  box-sizing: border-box;
+}
+
+.img_border {
+  border: 4px solid $white;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 1px;
+}
+
+.bb {
+  border-bottom: 1px solid $color_quill_gray_approx;
+}
+
+.bt {
+  border-top: 1px solid $color_quill_gray_approx;
+}
+
+.pt15 {
+  padding-top: 15px;
+}
+
+.pb15 {
+  padding-bottom: 15px;
+}
+
+.p15 {
+  padding: 0 15px;
+}
+
+.color-gray {
+  color: $color_french_gray_approx;
+}
+
+html {
+  font: 14px/1.5 "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif;
+  color: $color_vulcan_approx;
+
+}
+
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.newcontainer {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.page-container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+  color: $color_font;
+}
+
+#main {
+  min-height: 750px;
+  padding: 20px 0;
+  background: $white;
+  padding-top: 0;
+}
+
+.waper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.shadow {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 2px 4px $black_10;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.my_mp {
+  span {
+    display: block;
+    line-height: 16px;
+    color: $color_dove_gray_approx;
+  }
+  .mp {
+    padding-top: 12px;
+    font-size: 12px;
+  }
+  a:hover .mp_num {
+    color: $white;
+  }
+}
+
+.set_btn {
+  right: 0;
+  img {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 22px;
+    border: 2px solid $color_silver_chalice_approx;
+    vertical-align: middle;
+    display: inline-block;
+    background: $url_5 no-repeat 0 0;
+  }
+  a.hover {
+    background-color: $color_tuna_approx;
+  }
+}
+
+#nav_list {
+  display: none;
+  z-index: 999;
+  width: 140px;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: $color_tuna_approx;
+  list-style: none;
+  #my_space {
+    padding: 0 18px;
+    background-image: none;
+    border: 0;
+    height: 49px;
+    line-height: 49px;
+    text-align: center;
+  }
+  .my_message {
+    background-position: 19px -46px;
+  }
+  #my_note {
+    background-position: 19px -90px;
+  }
+  #my_question {
+    background-position: 19px -128px;
+  }
+  #my_setting {
+    background-position: 19px -167px;
+  }
+  #my_logout {
+    background-position: 19px -207px;
+  }
+  li a {
+    border-top: 1px solid $color_abbey_approx;
+    height: 39px;
+    line-height: 39px;
+    font-size: 14px;
+    background-image: $url_6;
+    background-repeat: no-repeat;
+    display: block;
+    color: $white;
+    text-align: left;
+    padding: 0;
+    padding-left: 47px;
+    width: auto;
+  }
+  a:hover {
+    color: $white;
+    background-color: $color_abbey_approx;
+  }
+}
+
+.myspace_remind {
+  width: 10px;
+  height: 10px;
+  background: $url_7 no-repeat 0 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.followus {
+  a {
+    float: left;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    background-image: $url_8;
+    background-repeat: no-repeat;
+    margin: 3px 6px 0;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.2s;
+  }
+  .followus-weixin {
+    background-position: -52px -262px;
+  }
+  .followus-weibo {
+    background-position: 0 -262px;
+  }
+  .followus-qzone {
+    background-position: 0 -363px;
+  }
+}
+
+.flw-weixin-box {
+  position: absolute;
+  display: none;
+  width: 170px;
+  height: 220px;
+  left: -69px;
+  bottom: 35px;
+  background: $url_9 no-repeat 0 0;
+}
+
+.friend-links {
+  line-height: 60px;
+  a {
+    display: inline-block;
+    margin-right: 20px;
+    &:hover {
+      text-decoration: underline;
+      color: $black;
+    }
+  }
+  dl {
+    padding: 0 10px;
+  }
+  dd {
+    float: left;
+    width: 160px;
+  }
+}
+
+.footer_link {
+  ul {
+    overflow: hidden;
+    margin-top: -1px;
+  }
+  a {
+    &:link {
+      color: $color_ghost_approx;
+    }
+    &:visited {
+      color: $color_ghost_approx;
+    }
+    &:active {
+      color: $color_ghost_approx;
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.page {
+  margin: 25px 0 auto;
+  overflow: hidden;
+  clear: both;
+  text-align: center;
+  a {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0 5px;
+    min-width: 20px;
+    height: 29px;
+    line-height: 30px;
+    font-size: 14px;
+    color: $color_rolling_stone_approx;
+    text-align: center;
+    border-bottom: 1px solid transparent;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: border-color 0.2s;
+    &:hover {
+      border-color: $color_guardsman_red_approx;
+      color: $color_guardsman_red_approx;
+      text-decoration: none;
+    }
+    &.active {
+      background: $color_guardsman_red_approx;
+      color: $white;
+      border-color: transparent;
+    }
+  }
+  span {
+    @extend %extend_4;
+  }
+  .notmargin {
+    margin-right: 0;
+  }
+}
+
+.page-inner {
+  padding: 0 20px;
+}
+
+.page-disabled {
+  @extend %extend_4;
+}
+
+.page-first {
+  width: 50px;
+}
+
+.page-last {
+  width: 50px;
+}
+
+.page-prev {
+  width: 70px;
+}
+
+.page-next {
+  width: 70px;
+}
+
+.bordered {
+  border-bottom: solid 1px $color_iron_approx;
+}
+
+.panel {
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 2px 4px $black_20;
+  padding: 0 20px;
+  color: $color_vulcan_approx;
+  background-color: $white;
+  margin-bottom: 20px;
+}
+
+.panel-heading {
+  border-bottom: solid 1px $color_iron_approx;
+}
+
+.panel-title {
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+}
+
+progress {
+  display: inline-block;
+  background: $color_gallery_approx;
+  border: 0;
+  height: 6px;
+  color: $color_conifer_approx;
+  width: 400px;
+}
+
+progress::-webkit-progress-bar {
+  background: $color_gallery_approx;
+}
+
+progress::-moz-progress-bar {
+  background: $color_conifer_approx;
+}
+
+progress::-webkit-progress-value {
+  background: $color_conifer_approx;
+}
+
+.progress {
+  background: $color_gallery_approx;
+  height: 6px;
+  width: 400px;
+  display: inline-block;
+}
+
+.progressBar {
+  background: $color_conifer_approx;
+  height: 6px;
+}
+
+.teacher-icon {
+  width: 7px;
+  margin-left: 5px;
+  position: relative;
+  top: 1px;
+}
+
+.elevator {
+  position: fixed;
+  right: 15px;
+  bottom: 10px;
+  z-index: 1030;
+  a {
+    display: block;
+    position: relative;
+    margin: 1px 0;
+    outline: none;
+    height: 52px;
+    width: 52px;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: background-position 0.15s;
+    background: $url_11 no-repeat;
+  }
+  .elevator-diaocha {
+    background-position: 0 -798px;
+    &:hover {
+      background-position: 0 -984px;
+    }
+  }
+  .elevator-app-box {
+    position: absolute;
+    width: 172px;
+    height: 194px;
+    bottom: -10px;
+    right: 46px;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.25s, transform .3s;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    max-width: 0;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(0.01);
+    //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+    transform-origin: 100% 95%;
+    background: $url_12 no-repeat 0 -222px;
+  }
+  .elevator-app {
+    background-position: 0 -550px;
+    &:hover {
+      background-position: 0 -612px;
+      .elevator-app-box {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        filter: alpha(opacity=100);
+        max-width: none;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: scale(1);
+      }
+    }
+  }
+  .elevator-weixin-box {
+    position: absolute;
+    width: 172px;
+    height: 212px;
+    bottom: -10px;
+    right: 46px;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: opacity 0.25s, transform .3s;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    max-width: 0;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(0.01);
+    //Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+    transform-origin: 100% 95%;
+    background: $url_12 no-repeat 0 0;
+  }
+  .elevator-weixin {
+    background-position: 0 -860px;
+    &:hover {
+      background-position: 0 -922px;
+      .elevator-weixin-box {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        filter: alpha(opacity=100);
+        max-width: none;
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: scale(1);
+      }
+    }
+  }
+  .elevator-msg {
+    background-position: 0 -426px;
+    &:hover {
+      background-position: 0 -488px;
+    }
+  }
+  .elevator-top {
+    background-position: 0 -674px;
+    &:hover {
+      background-position: 0 -736px;
+    }
+  }
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+input::-moz-focus-inner {
+  border: 0;
+}
+
+.autowrap {
+  word-wrap: break-word;
+  //Instead of the line below you could use @include word-break($value)
+  word-break: break-all;
+}
+
+.compatible-contianer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-width: 800px;
+  height: 30px;
+  line-height: 30px;
+  background: $url_13 repeat-x;
+  z-index: 999999;
+}
+
+.cpt-ct {
+  color: $color_tuatara_approx;
+  font-size: 12px;
+  text-align: center;
+  i {
+    display: inline-block;
+    width: 12px;
+    height: 14px;
+    vertical-align: -2px;
+    margin-right: 5px;
+    background: $url_14 no-repeat 0 0;
+  }
+  a {
+    color: $color_chateau_green_approx;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.cpt-handle {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  font-size: 12px;
+  line-height: 27px;
+  a {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .cpt-agin {
+    color: $color_font;
+    margin-right: 5px;
+    &:hover {
+      color: $color_tuna_approx;
+    }
+  }
+}
+
+.cpt-close {
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  line-height: 16px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: 0.3s;
+  &:hover {
+    background-color: $color_pizazz_approx;
+    i {
+      background-position: 0 -42px;
+    }
+  }
+  i {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    vertical-align: 1px;
+    background: $url_14 no-repeat 0 -24px;
+  }
+}
+
+.layer-usercard {
+  position: absolute;
+  z-index: 999;
+  width: 370px;
+  height: 165px;
+  background: $white;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 2px 2px $color_mountain_mist_approx;
+  .arrow {
+    position: absolute;
+    left: 65px;
+    top: -11px;
+    width: 19px;
+    height: 11px;
+    background: $url_15;
+  }
+}
+
+.layer-usercard-header {
+  height: 110px;
+  background: $color_baltic_sea_approx;
+  dt {
+    @extend %extend_5;
+    padding-top: 20px;
+    font-size: 18px;
+  }
+  dd {
+    @extend %extend_5;
+    font-size: 12px;
+  }
+  .avatar img {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50px;
+    left: 21px;
+    position: absolute;
+    top: 21px;
+    border: 3px solid $color_gray_approx;
+  }
+}
+
+.layer-usercard-info {
+  ul {
+    overflow: hidden;
+    padding-top: 16px;
+    height: 32px;
+    font-size: 16px;
+    color: $color_cape_cod_approx;
+    position: relative;
+  }
+  li {
+    float: left;
+    padding: 0 22px;
+    border-right: 1px solid $color_alto_approx;
+    &.noborder {
+      border: 0;
+    }
+  }
+  span {
+    color: $color_star_dust_approx;
+    font-size: 12px;
+  }
+}
+
+.g-ipt {
+  color: $color_vulcan_approx;
+  background-color: $white;
+  border: 1px solid $color_pewter_approx;
+  height: 40px;
+  padding: 0 9px;
+  font-size: 14px;
+  line-height: 40px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  border-color: $color_pewter_approx;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: inset 0 1px 1px $black_7_5;
+  &:-moz-placeholder {
+    color: $color_ghost_approx;
+  }
+  &:-ms-input-placeholder {
+    color: $color_ghost_approx;
+  }
+  &.placeholder {
+    color: $color_ghost_approx;
+  }
+  &:focus {
+    border-color: $black;
+    outline: 0;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset 0 1px 1px $black_7_5, 0 0 8px $black_40;
+  }
+  &.disabled {
+    @extend %extend_6;
+  }
+}
+
+.g-ipt::-moz-placeholder {
+  color: $color_ghost_approx;
+  opacity: 1;
+}
+
+.g-ipt::-webkit-input-placeholder {
+  color: $color_ghost_approx;
+}
+
+.g-ipt[disabled] {
+  @extend %extend_6;
+}
+
+.g-ipt[readonly] {
+  @extend %extend_6;
+}
+
+.ipt-error {
+  color: $color_guardsman_red_approx;
+  border-color: $color_guardsman_red_approx;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: inset 0 1px 1px $black_7_5;
+  &:focus {
+    border-color: $color_guardsman_red_approx;
+    outline: 0;
+    //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: inset 0 1px 1px $black_7_5, 0 0 8px $color_guardsman_red_40_approx;
+  }
+}

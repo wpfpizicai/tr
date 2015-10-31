@@ -1,0 +1,28 @@
+.g-page-way{
+  height:60px;
+  line-height: 60px;
+  font-size: 18px;
+  margin: 0 0 10px 0;
+
+  .g-page-way-node {
+    display: inline;
+
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+    &::after{
+      content: '\\';
+      cursor: default;
+      padding: 0 5px 0 8px;
+      color: #777;
+    }
+    &:last-child{
+      color: #555;
+    }
+    &:last-child::after{
+
+      content: normal;
+    }
+
+  }
+}

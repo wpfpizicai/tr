@@ -1,0 +1,50 @@
+
+
+.nebulafe-header {
+
+  $header_height: 50px 40px;
+  $nav_item_width: 100px 100px;
+
+  width: 100%;
+  height: nth($header_height, 1);
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  z-index: 300;
+  border-bottom: 1px solid $color-border-select;
+  .nav {
+    display: block;
+    float: left;
+    height: inherit;
+    overflow: hidden;
+    .item {
+      display: block;
+      float: left;
+      height: inherit;
+      line-height: nth($header_height, 1);
+      width: nth($nav_item_width,1);
+      text-align: center;
+      a{
+        display: block;
+        width: inherit;
+        height: inherit;
+        color: $color-secondary;
+        text-decoration: none;
+        @include  transition();
+        &:hover{
+          color: $color-main-hover;
+          background-color: $color-bg-content;
+         }
+      }
+      &.active{
+        a{
+          color: $color-main-hover;
+        }
+        background-color: $color-bg-content;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="Manage">
+<head>
+  <meta charset="utf-8">
+  <title>管理后台</title>
+  <link rel="shortcut icon"  href="/resource/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/resource/module/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="/resource/module/bootstrap/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="/resource/module/flat/css/flat-ui.css">
+  <script src="/resource/module/jquery/1.9.1/jquery.js"></script>
+  <script src="/resource/bower_components/angularjs/angular.min.js"></script>
+  <script src="/resource/js/admin/controllers.js"></script>
+</head>
+<body>
+<div class="container" style="width:970px;">
+  <div class="login" style="margin-top:40px;" ng-controller="login">
+        <div class="login-screen">
+          <div class="login-icon">
+            <img src="/resource/module/flat/images/login/icon.png" alt="Welcome to Mail App" />
+            <h4>nebulafe<small>后台管理</small></h4>
+          </div>
+          <div class="login-form">
+            <div class="form-group">
+              <input type="text" class="form-control login-field" value="" placeholder="用户名" id="login-name" ng-model="userInfo.email"/>
+              <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control login-field" value="" placeholder="密码" id="login-pass" ng-model="userInfo.pwd"/>
+              <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+            <a style="background-image:none" class="btn btn-primary btn-lg btn-login btn-block" ng-click="login()">登录</a>
+            <a class="login-link" href="#"></a>
+          </div>
+        </div>
+      </div>
+</div>
+<script>
+
+//$(function(){
+//    $('.btn-login').click(function(event){
+//        event.preventDefault();
+//        var name = $('#login-name').val().trim();
+//        if (name.length < 4) {
+//          return $('#login-name').focus();
+//        };
+//        var pwd = $('#login-pass').val().trim();
+//        if (pwd.length < 4) {
+//          return $('#login-pass').focus();
+//        };
+//        $.post("/login",{
+//          email: name,
+//          pwd: pwd
+//        }, function(data){
+//          if (data.errno) {
+//            return alert(data.errmsg);
+//          }else{
+//
+//          }
+//        })
+//    })
+//})
+</script>
+</body>
+</html>

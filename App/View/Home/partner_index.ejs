@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+<head>
+  <%- include ../meta.ejs %>
+  <link rel="stylesheet" href="/resource/css/layout.css"/>
+</head>
+<body>
+  <%- include ../header.ejs %>
+  <div class="container">
+    <h1 class="p-title text-center">我们的合作伙伴</h1>
+    <div class="row">
+    <%partners.forEach(function(val){%>
+      <div class="col-md-2 col-xs-6">
+        <a href="/partner/view/<%=val.id%>" class="p-item">
+          <div class="p-logo">
+            <img src="http://n-partner.oss-cn-beijing.aliyuncs.com/logo_120/<%= val.img%>" alt="<%= val.name%>" width="120" height="120">
+          </div>
+          <div class="p-name text-center"><%= val.name%></div>
+        </a>
+      </div>
+    <%})%>
+    </div>
+  </div>
+  <%- include ../footer.ejs %>
+</body>
+</html>

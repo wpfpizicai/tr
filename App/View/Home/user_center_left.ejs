@@ -1,0 +1,20 @@
+<ul class="left">
+    <li class="left-item <% if (link == 'mycourse') {%> active <%}%>">
+        <a class="link" href="/user/mycourse/<%=userInfo.id%>">我的课程</a>
+    </li>
+    <li class="left-item <% if (link == 'myorder') {%> active <%}%>">
+        <a class="link" href="/user/myorder">我的订单</a>
+    </li>
+    <li class="left-item <% if (link == 'see') {%> active <%}%>">
+        <a class="link" href="/user/see/<%=userInfo.id%>">个人资料</a>
+    </li>
+    <li class="left-item <% if (link == 'avator') {%> active <%}%>">
+        <a class="link" href="/user/avator/<%=userInfo.id%>">头像设置</a>
+    </li>
+    <li class="left-item <% if (link == 'verifyemail') {%> active <%}%>">
+        <a class="link" href="/user/verifyemail/<%=userInfo.id%>">邮箱验证</a>
+    </li>
+    <li class="left-item <% if (link == 'setpwd') {%> active <%}%>">
+        <a class="link" href="/user/setpwd/<%=userInfo.id%>">修改密码</a>
+    </li>
+</ul>

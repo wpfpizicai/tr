@@ -1,0 +1,29 @@
+@import "../settings/colors";
+table{
+  width: 100%;
+  box-sizing: border-box;
+  tr{
+    border-collapse: collapse;
+    &:hover{
+      background-color: $color-bg-table-hover;
+    }
+    td,
+    th{
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid $color-border-select;
+      border-collapse: collapse;
+      text-align: center;
+      line-height: 1.5;
+      &.c{
+        text-align: left;
+      }
+      &.r{
+        text-align: right;
+      }
+    }
+    th{
+      font-weight: bold;
+    }
+  }
+}

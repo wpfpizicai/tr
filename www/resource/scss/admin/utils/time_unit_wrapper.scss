@@ -1,0 +1,57 @@
+@import "../settings/colors";
+
+.time-unit-wrapper,
+.g-time-unit-wrapper {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 4px;
+  height: 30px;
+  box-sizing: border-box;
+  line-height: 30px - 2px;
+
+  .wrapper {
+    display: inline-block;
+    position: relative;
+
+    /*相关图表定位*/
+    .item {
+      position: relative;
+      float: left;
+      width: auto;
+      height: 100%;
+      box-sizing: border-box;
+      line-height: inherit;
+      padding: 0 12px;
+      font-size: 14px;
+      background-color: transparent;
+      border-right: 1px solid $color-border-select;
+      color: #7D8889;
+      cursor: pointer;
+      margin: 0;
+      
+      border-top:1px solid $color-border-select;
+      border-bottom:1px solid $color-border-select;
+      border-right: 1px solid $color-border-select;
+
+      &:first-child {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-left:1px solid $color-border-select;
+      }
+      &:last-child{
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+      &:first-child:nth-last-child(1){
+        border:none;
+      }
+    }
+    .selected, .item:hover {
+      background-color: #7D8889;
+      border-color: #7D8889;
+      color: $white;
+    }
+  }
+
+}

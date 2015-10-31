@@ -1,0 +1,34 @@
+@media screen and (min-width: 425px) {
+  html {
+    font-size: 40px; }
+    html body {
+      font-size: 14px; } }
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 20px; }
+    html body {
+      font-size: 14px; } }
+teacher-edit {
+  display: block;
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  top: 0;
+  left: 0; }
+  teacher-edit .teacher-edit {
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 600px;
+    box-sizing: border-box;
+    padding: 30px 10px;
+    height: auto;
+    overflow: hidden;
+    margin-top: 50vh;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #4E5D6C; }
+
+/*# sourceMappingURL=teacher.css.map */

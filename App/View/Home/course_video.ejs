@@ -1,0 +1,171 @@
+<!Doctype html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+    <link rel="stylesheet" href="/resource/module/video-js/video-js.css"/>
+    <link rel="stylesheet" href="/resource/css/course-video.css"/>
+
+</head>
+<body>
+<% var current_course = cur_resource[0]%>
+<%- include ../header.ejs %>
+
+<div class="container loading" id="c-video-view">
+    <video id="really-cool-video" class="video-js vjs-default-skin video-view" controls
+           preload="auto" width="100%" height="600px" poster="<%-current_course.poster%>"
+           >
+        <source src="<%-current_course.webmv%>" type='video/webm'>
+        <source src="<%-current_course.ogv%>" type='video/ogv'>
+        <source src="<%-current_course.m4v%>" type='video/mp4'>
+        <source src="<%-current_course.m4v%>" type='video/m4v'>
+
+
+
+        <p class="vjs-no-js">
+            若要播放此视频，请使用 <a href="http://videojs.com/html5-video-support/" target="_blank">支持HTML5 视频播放</a>的浏览器，并保证JavaScript没有被禁止。
+        </p>
+    </video>
+
+
+</div>
+<div class="down-container">
+    <div class="c-course-left">
+        <div class="row">
+            <nav class="course-video-user-nav">
+                <a class="nav-item active" href="">评论</a>
+            </nav>
+        </div>
+        <div class="c-course-down-page-container">
+            <div class="c-tab-page comment-tab-page active" id="comment-tab-page">
+                <div class="comment-editor-wrapper">
+                    <div class="row">
+                        <textarea class="user-comment-editor" id="user-comment-editor"
+                                  placeholder="写下你对这门课的看法吧~"></textarea>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-green comment-submit" id="comment-submit" data-course-id="<%=course.id%>"
+                              data-user-id="<%=userInfo.id%>" data-nickname="<%=userInfo.nickname%>">发表评论</span>
+                    </div>
+
+                </div>
+                <div class="comment-list" id="comment_list" data-num="<%=comments.num%>">
+                    <% var comments_list = comments.list %>
+                    <% comments_list.forEach(function(val){%>
+                    <article class="comment">
+                        <div class="left-content">
+                            <a href="/user/message/?to=<%= val.userid%>#<%= val.userid%>" class="user-head-icon user-head-<%=val.avator||1%>" data-id="<%=val.userid%>"></a>
+                        </div>
+
+                        <div class="right-content">
+                            <a href="/user/message/?to=<%= val.userid%>#<%= val.userid%>" class="link user-name"><%=val.nickname%></a>
+                            <section class="comment-content"><p><%=val.comment%></p></section>
+                            <% var d = new Date(val.updatetime).toLocaleDateString();%>
+                            <time class="comment-time"><%=val.updatetime%></time>
+                        </div>
+                    </article>
+                    <%})%>
+                </div>
+                <div id="video_pager"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-course-right">
+
+    </div>
+
+    <!--播放列表-->
+    <div class="c-video-list-wrapper" tabindex="0">
+        <a class="c-recent-course-name">当前播放列表：<b id="c_course_name"> <%=course.name%></b></a>
+    </div>
+    <div class="c-video-play-list" id="c-video-play-list">
+        <%resources.forEach(function(val,idx){%>
+        <a class="c-video-play-list-item <%if(val.id == current_course.id){%> current-play <%}%>"
+           href="/course/video/<%=course.id%>/<%=val.id%>">
+            <span class="c-video-play-list-item-title "><%=val.title%></span>
+            <span class="c-video-play-list-item-teacher">授课人：<%=val.artist%></span>
+        </a>
+        <%})%>
+    </div>
+
+
+</div>
+
+<%- include ../footer.ejs %>
+<script>
+    function cv(e) {
+        e.preventDefault();
+        return false;
+    }
+
+    document.body.addEventListener("contextmenu",function(e){
+        return cv(e);
+    });
+</script>
+
+<script src="/resource/module/video-js/video.js"></script>
+<script>seajs.use('js/course/video')</script>
+
+
+<script type="text/html" id="tmp-c-course-video-end-list">
+    <div class="c-course-video-end-list active">
+        <div class="list">
+            <% var s= 0; var pl_list = 0; %>
+            <% resources.forEach(function(val,idx){
+            if (val.id == current_course.id){
+            s = idx;
+            }
+            }) %>
+            <%resources.forEach(function(val,idx){%>
+            <%if((idx > s - 3 ) && (idx < s + 3) && (idx != s) ){%>
+            <a class="item <%if(val.id == current_course.id){%> current-play <%}%>"
+               href="/course/video/<%=course.id%>/<%=val.id%>">
+                <div class="img" style="background-image:url('<%=val.poster%>')"></div>
+                <span class="title "><%=val.title%></span>
+                <span class="teacher">授课人：<%=val.artist%></span>
+            </a>
+            <%}%>
+            <%})%>
+        </div>
+        <div class="nav">
+            <% if(s>0){%>
+            <a class="previous" href="/course/video/<%=course.id%>/<%=resources[s-1].id%>">上一讲</a>
+            <% }%>
+            <% if(s==0){%>
+            <a class="previous" >往前没有了~</a>
+            <% }%>
+
+            <% if(s < resources.length - 1){%>
+            <a class="next" href="/course/video/<%=course.id%>/<%=resources[s+1].id%>">下一讲</a>
+            <% }%>
+            <% if(s == resources.length - 1) { %>
+            <a  class="next" >这是最后一讲~</a>
+            <% }%>
+        </div>
+
+    </div>
+</script>
+
+<script type="text/html" id="AQWERDF">
+    <div class="c-course-video-aqwerdf">
+        <div class="a-close" onclick="this.parentNode.setAttribute('data-ban','1');this.parentNode.classList.remove('active');">不再显示</div>
+    </div>
+</script>
+<script type="text/html" id="tool-bar-previous-next">
+    <% if(s>0){%>
+        <a class="vjs-course-previous" href="/course/video/<%=course.id%>/<%=resources[s-1].id%>" title="上一讲"</a>
+    <% }%>
+    <% if(s==0){%>
+        <a class="vjs-course-previous none" title="没有上一讲"></a>
+    <% }%>
+
+    <% if(s < resources.length - 1){%>
+    <a class="vjs-course-next" href="/course/video/<%=course.id%>/<%=resources[s+1].id%>" title="下一讲"></a>
+    <% }%>
+    <% if(s == resources.length - 1) { %>
+    <a  class="vjs-course-next none" title="已经是最后一讲了"></a>
+    <% }%>
+
+</script>
+</body>
+</html>

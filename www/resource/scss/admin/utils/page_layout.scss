@@ -1,0 +1,191 @@
+.g-page-container {
+  position: relative;
+  background-color: $color-bg-content;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  z-index: 1;
+}
+
+.g-page-title {
+  position: relative;
+  width: 100%;
+  height: 54px !important;
+  line-height: 55px;
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  background-color: $white;
+  padding: 0 20px;
+  z-index: 2;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+  &.no-shadow{
+    box-shadow: none;
+  }
+  .right-buttons {
+    height: inherit;
+    line-height: 50px;
+    float: right;
+  }
+  .left-section {
+    height: inherit;
+    line-height: inherit;
+    float: left;
+    .txt.title {
+      font-size: 16px;
+      color: $color_font;
+      .iconfont.icon-question::before {
+        font-size: 18px;
+        color: #909A9C;
+      }
+    }
+  }
+  .helptip {
+    font-family: "iconfont" !important;
+    font-size: 20px;
+    margin-left: 6px;
+    color: #909A9C;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    &:hover {
+      color: #909A9C;
+    }
+  }
+  .triangle {
+    position: absolute;
+    display: none;
+    left: 280px;
+    top: 90px;
+    width: 0px;
+    height: 0px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: rgba(118, 132, 154, 0.902) rgba(118, 132, 154, 0.90196) transparent transparent;
+    z-index: 2;
+  }
+  .tip-content {
+    display: none;
+    position: absolute;
+    left: 300px;
+    top: 90px;
+    padding: 20px;
+    background-color: rgb(118, 132, 154);
+    width: 392px;
+    font-size: 12px;
+    color: $white;
+    opacity: 0.902;
+    z-index: 2;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    padding-left: 30px;
+    &:before {
+      border-top: 20px solid rgb(118, 132, 154);
+    }
+    p {
+      margin-bottom: 10px;
+      line-height: 20px;
+    }
+    span {
+      color: #f1a86d;
+    }
+  }
+  .calendar {
+    position: absolute;
+    right: 20px;
+    top: 11px;
+    border: none;
+    border-radius: 3px;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    line-height: 1;
+    font-size: 14px;
+    background-color: $color-bg-content;
+  }
+}
+
+.g-secondary-page-title {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 30px;
+  padding-bottom: 1px;
+  border-bottom: 1px solid $color-border-select;
+  font-size: 0;
+  background-color: $color-bg-content;
+  .item {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 13px;
+    width: auto;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 48px;
+    line-height: 53px;
+    font-size: 14px;
+    background: transparent;
+    color: #7C8B8A;
+    &.active,
+    {
+      color: $color-main;
+      box-shadow: 0 2px 0 0 $color-main;
+      font-weight: bold;
+    }
+    &:hover {
+
+      box-shadow: 0 2px 0 0 $color-main;
+    }
+  }
+}
+
+.listFilter {
+  padding: 0 20px 10px 30px;
+  height: 55px;
+  .leftFilter select {
+    margin-right: 5px;
+  }
+}
+
+.leftFilter {
+  margin-top: 0;
+  margin-top: 15px;
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  float: left;
+  min-width: 700px;
+}
+
+.tip-wrapper {
+  padding-bottom: 0;
+  line-height: 13px;
+  .tip {
+    color: $color_tip;
+    font-size: 12px;
+  }
+}
+
+.pageHeader2 .leftTxt {
+  line-height: 56px;
+  border-bottom: 4px solid $color_neon_carrot;
+  padding: 0 30px;
+  font-family: $font_1;
+  font-size: 16px;
+  float: left;
+}
+
+.shadowLayout {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1000;
+  background-color: $color_font;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+  display: none;
+}
+
+.mainRightContent {
+  margin-left: 150px;
+  min-height: 825px;
+  padding-top: 60px;
+}

@@ -1,0 +1,14 @@
+button.modal-bg{
+  display: table;
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left:0;
+  top:0;
+  text-align: center;
+  &>*:first-child{
+    position: relative;
+    height: auto;
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+    <link rel="stylesheet" href="/resource/css/user-myorder.css"/>
+
+
+</head>
+<body>
+<%- include ../header.ejs %>
+<div class="container">
+    <%- include user_center_left.ejs %>
+    <div class="right-container">
+        <div class="my-wrap">
+            <div class="title-row">
+                <h3>我的订单</h3>
+            </div>
+            <div class="row">
+                <table class="order-table">
+                    <thead>
+                    <tr>
+                        <th width="40">序号</th>
+                        <th width="200">课程名</th>
+                        <th width="250">课程有效期</th>
+                        <th width="100">费用</th>
+                        <th width="160">状态</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% orders.forEach(function(item, index){ %>
+                    <tr class="status-<%- item.has_pay %>" data-id="<%- item.order_id %>" id="order_<%- item.order_id %>" data-uniqueid="<%=item.order_unique_id%>">
+                        <td>
+                            <span><%- index %></span>
+                        </td>
+                        <td>
+                            <span><%- item.order_name %></span>
+                        </td>
+                        <td>
+                            <% var d1 = (item.has_pay == 1) ? (new Date(item.order_current_datetime)) : (new Date()); %>
+                            <span>
+                                        <%- d1.getFullYear() %>年<%- d1.getMonth() + 1 %>月<%- d1.getDate() %>日
+                                        至
+                                <%- d1.getFullYear() + 1 %>年<%- d1.getMonth() + 1 %>月<%- d1.getDate() %>日
+                                    </span>
+                        </td>
+                        <td>
+                            <span><%- item.order_price %>元</span>
+                        </td>
+                        <td>
+                            <% if(item.has_pay === 1){ %>
+                            <span>支付成功</span>
+                            <% }else if(item.has_pay === 3){ %>
+                            <span class="order-del">订单已取消</span>
+                            <% }else{ %>
+                            <form action="/pay/info" method="POST" target="_blank">
+                                <input type="hidden" name="order_id" value="<%= item.order_id %>">
+                                <input type="submit" data-id="<%= item.order_id %>" class="btn btn-primary btn-sm repay" value="继续支付">
+                                <input type="button" data-id="<%= item.order_id %>" class="btn btn-default btn-sm delpay" value="取消">
+                            </form>
+                            <% } %>
+                        </td>
+                    </tr>
+                    <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+<%- include ../footer.ejs %>
+<script>seajs.use('js/user/myorder');</script>
+<%- include ./pay_modal.ejs %>
+</body>
+</html>
+

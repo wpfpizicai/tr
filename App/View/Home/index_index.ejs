@@ -1,0 +1,94 @@
+<!Doctype html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+    <link rel="stylesheet" href="/resource/css/layout.css"/>
+    <link rel="stylesheet" href="/resource/css/index.css"/>
+</head>
+<body>
+<%- include ../header.ejs %>
+<div class="pic-round">
+    <div class="bg">
+        <div class="center-block">
+            <div class="title">
+                <div class="title-img-box">
+                    <!--<img src="../img/title01.png" class="title-img " alt=""/>-->
+                    <div class="title-img title-1">
+
+                        专业的在线经济金融学习平台
+
+                    </div>
+                </div>
+                <div class="title-img-box">
+                    <!--<img src="../img/title02.png" class="title-img " alt=""/>-->
+                    <div class="title-img title-2">
+
+                        阳光照亮生活 星云陪你左右
+                    </div>
+                </div>
+            </div>
+            <a href="/course" class="try-now-btn">开始学习</a>
+        </div>
+
+    </div>
+    <div class="pic-wrapper">
+        <div class="img-box">
+            <div class="img" style="background-image: url(/resource/simg/slider_2.jpg);">
+            </div>
+        </div>
+        <div class="img-box">
+            <div class="img" style="background-image: url(/resource/simg/slider_1.jpg);">
+            </div>
+        </div>
+        <div class="img-box">
+            <div class="img" style="background-image: url(/resource/simg/slider_2.jpg);">
+            </div>
+        </div>
+        <div class="img-box">
+            <div class="img" style="background-image: url(/resource/simg/slider_1.jpg);">
+            </div>
+        </div>
+
+    </div>
+    <nav class="nav">
+        <div class="item" data-page="0"></div>
+        <div class="item" data-page="1"></div>
+        <!--<div class="item" data-page="2"></div>-->
+    </nav>
+    <!--<div class="down-arrow shine-forever"></div>-->
+    <div class="left-arrow-wrapper">
+        <div class="left-arrow"></div>
+    </div>
+    <div class="right-arrow-wrapper">
+        <div class="right-arrow"></div>
+    </div>
+
+</div>
+
+<div class="container ad-courses">
+    <div class="row">
+        <%courses.forEach(function(val){%>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a href="/course/view/<%= val.id%>" target="_blank">
+            <span class="course-img">
+              <img src="http://n-course.oss-cn-beijing.aliyuncs.com/pic/<%= val.img %>" alt="<%= val.name %>">
+            </span>
+                    <em><%= val.name %></em>
+                </a>
+
+                <p><%= val.source %> • <%= val.time %></p>
+            </div>
+        </div>
+        <%})%>
+    </div>
+    <div class="row text-center see-all">
+        <a href="/course">查看所有课程&gt;&gt;</a>
+    </div>
+</div>
+<%- include ../footer.ejs %>
+<script>
+    seajs.use('js/index_picround.js');
+</script>
+</body>
+</html>

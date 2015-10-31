@@ -1,0 +1,32 @@
+<header class="nebulafe-header">
+    <div class="logo"></div>
+    <nav class="nav">
+        <div class="item  <% if( title =='首页') {%> active <%}%>">
+            <a href="/manage/">首页</a>
+        </div>
+        <div class="item  <% if( title =='课程') {%> active <%}%>">
+            <a href="/manage/course/">课程</a>
+        </div>
+        <div class="item disabled  <% if( title =='用户中心') {%> active <%}%>">
+            <a >用户中心</a>
+        </div>
+        <div class="item" >
+            <a href="/manage/course/">课程管理</a>
+        </div>
+        <div class="item  <% if( header_index == 1) {%> active <%}%>">
+            <a href="/manage/course/">课程发布</a>
+        </div>
+        <div class="item <% if( header_index == 3) {%> active <%}%>">
+            <a href="/manage/partner/">添加机构</a>
+        </div>
+        <div class="item <% if( header_index == 4) {%> active <%}%>">
+            <a href="/manage/teacher/">添加教师</a>
+        </div>
+        <div class="item  <% if( header_index == 2) {%> active <%}%>">
+            <a href="/manage/resource/">添加视频</a>
+        </div>
+        <div class="item  <% if( header_index == 5) {%> active <%}%>">
+            <a href="/manage/notice/">通知管理</a>
+        </div>
+</header>
+<leftnav></leftnav>

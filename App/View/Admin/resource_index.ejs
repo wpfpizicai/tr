@@ -1,0 +1,204 @@
+<html ng-app="nebulafeAdmin">
+<%- include ./utils/common_head.ejs %>
+<body>
+<%- include ./utils/header.ejs %>
+<div class="container">
+    <div class="card">
+        <div class="resource-box" ng-controller="add_resource">
+            <div class="row">
+                <h1>添加课程资源</h1>
+            </div>
+            <form class="row" id="resource_form">
+                <div class="row ">
+                    <label class="col col-left" for="">
+                        <span class="txt">所属课程</span>
+                    </label>
+
+                    <div class="col">
+                        <select name="course" class="input input-mid">
+                            <% courses.forEach(function(val){ %>
+                            <option value="<%- val.id %>"><%- val.name %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="row ">
+                    <label class="col col-left" for="">
+                        <span class="txt">教师姓名</span>
+                    </label>
+
+                    <div class="col">
+                        <input type="text" class="input input-mid" name="artist" ng-model="artist" placeholder="教师姓名"/>
+                    </div>
+
+                </div>
+                <div class="row ">
+                    <label class="col col-left " for="">
+                        <span class="txt">资源名称</span>
+                    </label>
+
+                    <div class="col">
+                        <input type="text" class="input input-mid" name="title" ng-model="title" placeholder="教师姓名"/>
+                    </div>
+
+                </div>
+                <div class="row ">
+                    <label class="col  col-left" for="">
+                        <span class="txt">预览图</span>
+                    </label>
+
+                    <div class="col">
+                        <img  id="poster_overview" alt="暂时没有预览图"/>
+                    </div>
+                    <div class="col">
+                        <label for="file_poster" class="radiusBtn square style_2 auto short-height">上传文件</label>
+                        <input type="file" id="file_poster" name="poster" class="hide"/>
+                    </div>
+                </div>
+                <div class="row ">
+                    <label class="col  col-left" for="">
+                        <span class="txt">webmv格式资源</span>
+                    </label>
+
+                    <div class="col">
+                        <label for="file_webmv" class="radiusBtn square style_2 auto short-height">上传文件</label>
+                        <input type="file" name="webmv" id="file_webmv" class="hide"/>
+                    </div>
+
+                    <div class="col video-overview" id="webmv_overview">
+
+                    </div>
+
+                </div>
+                <div class="row ">
+                    <label class="col  col-left" for="">
+                        <span class="txt">ogv格式资源</span>
+                    </label>
+
+                    <div class="col">
+                        <label for="file_ogv" class="radiusBtn square style_2 auto short-height">上传文件</label>
+                        <input type="file" name="ogv" id="file_ogv" class="hide"/>
+                    </div>
+
+                    <div class="col video-overview" id="ogv_overview">
+
+                    </div>
+
+                </div>
+                <div class="row ">
+                    <label class="col  col-left" for="">
+                        <span class="txt">m4v格式资源</span>
+                    </label>
+
+                    <div class="col">
+                        <label for="file_m4v" class="radiusBtn square style_2 auto short-height">上传文件</label>
+                        <input type="file" name="m4v" id="file_m4v" class="hide"/>
+                    </div>
+
+                    <div class="col video-overview" id="m4v_overview">
+
+                    </div>
+
+                </div>
+
+                <div class="row ">
+                    <label class="col col-left" for="">
+                        <span class="txt">教师介绍</span>
+                    </label>
+
+                    <div class="col col-right">
+                        <textarea class="input input-mid" style="resize: vertical; min-height: 80px; line-height: 1.7;"
+                                  name="description" placeholder="资源的介绍"></textarea>
+                    </div>
+                </div>
+
+                <div class="">
+                    <span type="button" class="radiusBtn square style_1" id="submit_btn">提交</span>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+<script>
+    (function () {
+        var filesArr = {};
+
+        function bind() {
+            $('#resource_form').on('change', function (ev) {
+                var tar = $(ev.target);
+                if (ev.target.tagName.toLowerCase() === 'input' && tar.attr('type') == 'file') {
+                    var name = tar.attr('name');
+                    filesArr[name] = ev.target.files[0];
+
+                    //检查内容
+                    //如果为图片
+                    if (filesArr[name].type.indexOf('image') !== -1) {
+                        loadImage(filesArr[name],name);
+                    }
+                    if (filesArr[name].type.indexOf('video') !== -1) {
+                        if(filesArr[name].type.indexOf(name)== -1){
+                            alert('您所选取的视频格式不为'+name+'请重新选取');
+                        }else{
+                            loadVideo(filesArr[name],name);
+                        }
+
+                    }
+                    console.log(filesArr);
+                }
+            });
+            $('#submit_btn').on('click', function (ev) {
+                function getFormData(){
+                    var f = new FormData(document.getElementById('resource_form'));
+                    return f;
+                }
+                $.ajax({
+                    url: '/manage/resource',
+                    type: "POST",
+                    data: getFormData(),
+                    processData: false,  // 告诉jQuery不要去处理发送的数据
+                    contentType: false   // 告诉jQuery不要去设置Content-Type请求头
+                }).success(function (response) {
+                    alert('提交成功');
+                    console.log(response);
+                });
+            });
+        }
+
+        bind();
+
+        function loadUpdatedFile(fileObj, cb) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var file = reader.result;
+                cb && cb.call(null, file);
+                console.log(reader.result);
+            };
+            reader.readAsDataURL(fileObj);
+        }
+
+        function loadImage(fileObj,name) {
+            loadUpdatedFile(fileObj,function(file){
+                var img = $('#'+name+'_overview');
+                img.get(0).src = file;
+                img.css({width: '120px'});
+
+            });
+        }
+
+        function loadVideo(fileObj,name) {
+            var str = '<span class="txt">'+fileObj.name+'</span>';
+            $('#'+name+'_overview').append(str);
+        }
+
+
+    })();
+</script>
+<%- include ./utils/templates.ejs %>
+
+</html>
+

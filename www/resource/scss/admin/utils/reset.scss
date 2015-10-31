@@ -1,0 +1,375 @@
+@import "extends";
+html {
+  @extend %extend_1;
+  line-height: 1;
+  background-color: $white;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  @extend %extend_1;
+  font-family: $font_1, $font_2, $font_3, $font_4, $font_5;
+  background-color: $white;
+  font-size: 12px;
+  overflow-x: hidden;
+  -webkit-text-size-adjust:none;
+}
+
+div {
+  @extend %extend_1;
+}
+
+span {
+  @extend %extend_1;
+}
+
+applet {
+  @extend %extend_1;
+}
+
+object {
+  @extend %extend_1;
+}
+
+iframe {
+  @extend %extend_1;
+}
+
+h1 {
+  @extend %extend_1;
+}
+
+h2 {
+  @extend %extend_1;
+}
+
+h3 {
+  @extend %extend_1;
+}
+
+h4 {
+  @extend %extend_1;
+}
+
+h5 {
+  @extend %extend_1;
+}
+
+h6 {
+  @extend %extend_1;
+}
+
+p {
+  @extend %extend_1;
+}
+
+blockquote {
+  @extend %extend_1;
+  quotes: none;
+  &:before {
+    content: "";
+    content: none;
+  }
+  &:after {
+    content: "";
+    content: none;
+  }
+}
+
+pre {
+  @extend %extend_1;
+}
+
+a {
+  @extend %extend_1;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  img {
+    border: none;
+  }
+}
+
+abbr {
+  @extend %extend_1;
+}
+
+acronym {
+  @extend %extend_1;
+}
+
+address {
+  @extend %extend_1;
+}
+
+big {
+  @extend %extend_1;
+}
+
+cite {
+  @extend %extend_1;
+}
+
+code {
+  @extend %extend_1;
+}
+
+del {
+  @extend %extend_1;
+}
+
+dfn {
+  @extend %extend_1;
+}
+
+em {
+  @extend %extend_1;
+}
+
+img {
+  @extend %extend_1;
+}
+
+ins {
+  @extend %extend_1;
+}
+
+kbd {
+  @extend %extend_1;
+}
+
+q {
+  @extend %extend_1;
+  quotes: none;
+  &:before {
+    content: "";
+    content: none;
+  }
+  &:after {
+    content: "";
+    content: none;
+  }
+}
+
+s {
+  @extend %extend_1;
+}
+
+samp {
+  @extend %extend_1;
+}
+
+small {
+  @extend %extend_1;
+}
+
+strike {
+  @extend %extend_1;
+}
+
+strong {
+  @extend %extend_1;
+}
+
+sub {
+  @extend %extend_1;
+}
+
+sup {
+  @extend %extend_1;
+}
+
+tt {
+  @extend %extend_1;
+}
+
+var {
+  @extend %extend_1;
+}
+
+b {
+  @extend %extend_1;
+}
+
+u {
+  @extend %extend_1;
+}
+
+i {
+  @extend %extend_1;
+}
+
+center {
+  @extend %extend_1;
+}
+
+dl {
+  @extend %extend_1;
+}
+
+dt {
+  @extend %extend_1;
+}
+
+dd {
+  @extend %extend_1;
+}
+
+ol {
+  @extend %extend_1;
+  list-style: none;
+}
+
+ul {
+  @extend %extend_1;
+  list-style: none;
+}
+
+li {
+  @extend %extend_1;
+}
+
+fieldset {
+  @extend %extend_1;
+}
+
+form {
+  @extend %extend_1;
+}
+
+label {
+  @extend %extend_1;
+}
+
+legend {
+  @extend %extend_1;
+}
+
+table {
+  @extend %extend_1;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption {
+  @extend %extend_1;
+  @extend %extend_2;
+}
+
+tbody {
+  @extend %extend_1;
+}
+
+tfoot {
+  @extend %extend_1;
+}
+
+thead {
+  @extend %extend_1;
+}
+
+tr {
+  @extend %extend_1;
+}
+
+th {
+  @extend %extend_1;
+  @extend %extend_2;
+}
+
+td {
+  @extend %extend_1;
+  @extend %extend_2;
+}
+
+article {
+  @extend %extend_1;
+  display: block;
+}
+
+aside {
+  @extend %extend_1;
+  display: block;
+}
+
+canvas {
+  @extend %extend_1;
+}
+
+details {
+  @extend %extend_1;
+  display: block;
+}
+
+embed {
+  @extend %extend_1;
+}
+
+figure {
+  @extend %extend_1;
+  display: block;
+}
+
+figcaption {
+  @extend %extend_1;
+  display: block;
+}
+
+footer {
+  @extend %extend_1;
+  display: block;
+}
+
+header {
+  @extend %extend_1;
+  display: block;
+}
+
+hgroup {
+  @extend %extend_1;
+  display: block;
+}
+
+menu {
+  @extend %extend_1;
+  display: block;
+}
+
+nav {
+  @extend %extend_1;
+  display: block;
+}
+
+output {
+  @extend %extend_1;
+}
+
+ruby {
+  @extend %extend_1;
+}
+
+section {
+  @extend %extend_1;
+  display: block;
+}
+
+summary {
+  @extend %extend_1;
+  display: block;
+}
+
+time {
+  @extend %extend_1;
+}
+
+mark {
+  @extend %extend_1;
+}
+
+audio {
+  @extend %extend_1;
+}
+
+video {
+  @extend %extend_1;
+}

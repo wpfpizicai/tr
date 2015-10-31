@@ -1,0 +1,164 @@
+$label-color: #656e77;
+.left {
+  display: block;
+  position: relative;
+  float: left;
+  width: 265px;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 0 0 3px #ccc;
+  .left-item {
+    width: inherit;
+    height: 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
+    .link {
+      display: block;
+      width: 100%;
+      height: inherit;
+      line-height: 55px;
+      font-size: 14px;
+      box-sizing: border-box;
+      padding-left: 50px;
+      color: $color_font;
+      @include transition(all ease-out .15s);
+      &:hover {
+        text-decoration: none;
+        color: $color_guardsman_red_approx;
+        box-shadow: 0 0 5px #aaa;
+      }
+    }
+    &.active::before {
+      content: "";
+      display: block;
+      position: absolute;
+      margin: 0;
+      height: inherit;
+      border-left: 3px solid $color_guardsman_red_approx;
+    }
+  }
+}
+
+.right-container {
+  display: block;
+  position: relative;
+  float: right;
+  padding: 30px 60px;
+  width: 880px;
+
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 0 3px #ccc;
+
+  .my-wrap {
+    display: block;
+    box-sizing: border-box;
+    width: 820px;
+    padding: 20px 0  0 0;
+    min-height: calc(100vh - 260px);
+    .my-form {
+      .input-row {
+        display: block;
+        width: 100%;
+        min-height: 70px;
+        padding-top: 5px;
+        clear: both;
+        overflow: hidden;
+        .label {
+          display: block;
+          float: left;
+          width: 100px;
+          text-align: right;
+          padding-right: 15px;
+          color: $label-color;
+          font-weight: normal;
+          line-height: 35px;
+          font-size: 14px;
+        }
+        a{
+          cursor: pointer;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+
+          &:focus{
+            border-color: $color_link_blue;
+            box-shadow: 0 0 6px 0 rgba(45,136,227,.5);
+          }
+        }
+        .g-ipt,
+        .btn-wrapper .btn{
+          display: inline-block;
+          width: 300px;
+          box-sizing: border-box;
+          border-radius: 1px;
+        }
+        .g-ipt{
+          @include transition(box-shadow ease .2s);
+          padding-left: 40px;
+        }
+        .g-ipt + i::before{
+          @extend .iconfont;
+          width: 30px;
+          height: 25px;
+          display: block;
+          position: absolute;
+          margin-top: -31px;
+          margin-left: 105px;
+          line-height: 23px;
+          text-align: center;
+          font-size: 22px;
+          border-right: 1px solid #ccc;
+          color: #999;
+        }
+        .ipt-email + i::before{
+          content: $icon-xiaoxi;
+        }
+        .ipt-nick + i::before{
+          content: $icon-guanyuwo;
+        }
+        .ipt-realname + i::before{
+          content: $icon-wo;
+        }
+        .ipt-mobile + i::before{
+          content: $icon-shouye;
+        }
+        .ipt-idcard + i::before{
+          content: $icon-wo;
+        }
+        input[type="password"] + i::before{
+          content: $icon-yanzhengma1;
+        }
+        input[name="verify"] + i::before{
+          content: $icon-yanzhengma;
+        }
+
+      }
+      .tip-row{
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 120px;
+        padding-bottom: 15px;
+      }
+
+      .tips{
+        color: $color_red_approx;
+        font-size: 13px;
+        padding-left: 100px;
+        padding-top: 5px;
+        margin-top: 5px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .js-forgotpwd-form-wrap {
+    .js-forgot-form{
+      display: block;
+    }
+    .js-forgot-result{
+      display: none;
+    }
+  }
+}

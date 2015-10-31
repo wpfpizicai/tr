@@ -1,0 +1,87 @@
+@import "../settings/colors";
+@import "../settings/css3";
+
+html, body {
+  padding: 0;
+  text-align: center;
+  min-height: 100vh;
+  background-color: $color-bg-content;
+}
+
+body > .container {
+  margin: 60px auto;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 900px;
+  //background-color: #f5f5f5;
+}
+
+%card{
+  min-width: 800px;
+  box-sizing: border-box;
+  border: 1px solid $color-border-select;
+  background-color: $white;
+  &:hover{
+    border-color: $color-border-card-hover;
+  }
+  &.t-left{
+    text-align: left;
+  }
+  &.t-center{
+    text-align: center;
+  }
+}
+
+.card{
+  @extend %card;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+h1{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.message-box,
+.teacher-box,
+.resource-box,
+.add-course-box,
+.partner-box{
+  margin: auto;
+  &>.row{
+    text-align: left;
+    width: 700px;
+    margin: auto;
+  }
+  .btn-wrapper{
+    text-align: center;
+    .radiusBtn{
+      margin: auto;
+    }
+  }
+}
+.teacher-box,
+.resource-box,
+.add-course-box,
+.partner-box{
+  .col-left{
+    width: 120px;
+  }
+
+}
+
+textarea.input{
+  resize: vertical;
+  height: 80px;
+  line-height: 1.7;
+}
+
+@import "../utils/header";
+@import "../utils/leftNav";
+@import "../utils/imgUploader";
+@import "../utils/teacher";
+@import "../utils/newTable";
+@import "../utils/modal";
+
+

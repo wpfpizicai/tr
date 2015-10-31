@@ -1,0 +1,53 @@
+
+.tipTxt {
+  color: $color_mountain_mist;
+}
+
+.txt {
+  -webkit-font-smoothing: antialiased;
+}
+
+.g-secondary-txt {
+  color: $color-font-guide;
+}
+
+.warning {
+  color: $color-delete;
+}
+.g-report-bold-number {
+  color: $color-font-emph;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Tahoma;
+}
+
+.hoverUnderlined {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.link {
+  cursor: pointer;
+  color: $color-font-link !important;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.red {
+  color: $color-delete;
+}
+
+.blue {
+  color: $color-font-link;
+}
+
+.wordCut {
+  @extend %extend_word_cut;
+}
+
+
+.underlined {
+  text-decoration: underline;
+}

@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $white;
+  color: $color_chicago_approx;
+  font: 14px/2em $font_1, $font_2, $font_3;
+  overflow-y: scroll;
+  min-width: 1200px;
+  background-color: $color_gallery_approx;
+  min-width: 620px;
+  background: $color_gallery_approx;
+  font: 14px/1.5 "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
+  color: $color_vulcan_approx;
+}
+div {
+  margin: 0;
+  padding: 0;
+}
+dl {
+  margin: 0;
+  padding: 0;
+}
+dt {
+  margin: 0;
+  padding: 0;
+}
+dd {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  margin: 0;
+  padding: 0;
+  &.layer-usercard-medal {
+    padding: 0;
+    top: 12px;
+    right: 10px;
+    width: 117px;
+    position: absolute;
+    border: 0;
+  }
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  @extend %extend_1;
+}
+h2 {
+  margin: 0;
+  padding: 0;
+  @extend %extend_1;
+  font-size: 20px;
+}
+h3 {
+  margin: 0;
+  padding: 0;
+  @extend %extend_1;
+  font-size: 16px;
+  line-height: 32px;
+}
+h4 {
+  margin: 0;
+  padding: 0;
+  @extend %extend_1;
+}
+h5 {
+  margin: 0;
+  padding: 0;
+  @extend %extend_1;
+  font-size: 14px;
+  line-height: 28px;
+}
+h6 {
+  margin: 0;
+  padding: 0;
+  @extend %extend_1;
+}
+pre {
+  margin: 0;
+  padding: 0;
+}
+code {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+}
+form {
+  margin: 0;
+  padding: 0;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+legend {
+  margin: 0;
+  padding: 0;
+}
+input {
+  margin: 0;
+  padding: 0;
+  *font-size: 100%;
+  border: none;
+  outline: none;
+  outline: none;
+}
+button {
+  margin: 0;
+  padding: 0;
+  *font-size: 100%;
+  border: none;
+  outline: none;
+  &.hidefocus::-moz-focus-inner {
+    border: none;
+  }
+}
+textarea {
+  margin: 0;
+  padding: 0;
+  *font-size: 100%;
+  border: none;
+  outline: none;
+  &.g-ipt {
+    height: auto;
+    height: auto;
+  }
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+blockquote {
+  margin: 0;
+  padding: 0;
+  quotes: none;
+  &:before {
+    content: '';
+    content: none;
+  }
+  &:after {
+    content: '';
+    content: none;
+  }
+}
+th {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+td {
+  margin: 0;
+  padding: 0;
+}
+img {
+  border: 0;
+}
+:focus {
+  outline: 0;
+}
+address {
+  font-style: normal;
+  font-weight: normal;
+}
+caption {
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+}
+cite {
+  font-style: normal;
+  font-weight: normal;
+}
+dfn {
+  font-style: normal;
+  font-weight: normal;
+}
+em {
+  font-style: normal;
+  font-weight: normal;
+}
+strong {
+  font-style: normal;
+  font-weight: normal;
+}
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+optgroup {
+  font-style: normal;
+  font-weight: normal;
+}
+abbr {
+  border: 0;
+  font-variant: normal;
+}
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+kbd {
+  font-size: 100%;
+}
+samp {
+  font-size: 100%;
+}
+tt {
+  font-size: 100%;
+}
+select {
+  *font-size: 100%;
+  border: none;
+  margin: 0;
+  font-size: 100%;
+  cursor: pointer;
+  font-weight: normal;
+  background-color: $white;
+  border: 1px solid $color_celeste_approx;
+  color: $color_fuscous_gray_approx;
+  display: inline-block;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  padding: 4px 6px;
+  vertical-align: middle;
+  &:focus {
+    outline: thin dotted $color_mine_shaft_approx;
+    outline-offset: -2px;
+  }
+  &.g-ipt {
+    height: 40px;
+    line-height: 40px;
+  }
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+sup {
+  font-size: 100%;
+  vertical-align: baseline;
+}
+sub {
+  font-size: 100%;
+  vertical-align: baseline;
+}
+:link {
+  text-decoration: none;
+}
+:visited {
+  text-decoration: none;
+}
+ins {
+  text-decoration: none;
+}
+q {
+  quotes: none;
+  &:before {
+    content: '';
+    content: none;
+  }
+  &:after {
+    content: '';
+    content: none;
+  }
+}

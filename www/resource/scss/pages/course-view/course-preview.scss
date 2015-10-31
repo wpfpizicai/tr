@@ -1,0 +1,172 @@
+$c-preview-video-size: 600px 340px;
+$c-preview-course-info-size: 320px 340px;
+$c-preview-course-manu-size: 280px 340px;
+$color-course-like-bg: #4D5A61;
+
+.c-course-preview {
+  width: 100%;
+  height: nth($c-preview-video-size, 2);
+  font-size: 0;
+  .c-video-container {
+    display: inline-block;
+    vertical-align: top;
+    width: nth($c-preview-video-size, 1);
+    height: inherit;
+    .c-video-preview {
+      display: block;
+      width: inherit;
+      height: inherit;
+      background-color: $color-course-like-bg;
+    }
+  }
+  .c-course-preview-info {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 0 30px;
+    width: 320px;
+    height: inherit;
+    background-color: $color_cape_cod_approx;
+    .c-course-info-item {
+      display: block;
+      box-sizing: border-box;
+      border-bottom: 1px solid $color-course-like-bg;
+      padding: 15px 0;
+      width: 100%;
+      height: nth($c-preview-video-size,2)/3;
+      .c-partner-logo {
+        display: block;
+        box-sizing: border-box;
+        line-height: nth($c-preview-video-size,2)/3 - 15*2 - 5px;
+        padding: 5px 10px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #fff;
+        img {
+          max-width: 100%;
+          margin: auto;
+          max-height: 100%;
+        }
+      }
+
+      .c-course-last-time {
+        display: block;
+        box-sizing: border-box;
+        line-height: nth($c-preview-video-size,2)/3 - 15px*2 - 10px;
+        padding: 5px 10px;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        .c-course-info-label {
+          font-weight: lighter;
+          color: $color_manatee_approx;
+          font-size: 16px;
+          margin-left: -5px;
+          margin-right: 10px;
+        }
+        .txt {
+          color: $white;
+          font-size: 28px;
+          &::after {
+            font-size: 16px;
+            padding-left: 2px;
+          }
+
+        }
+      }
+      .c-course-tag-intro {
+        display: block;
+        box-sizing: border-box;
+        line-height: nth($c-preview-video-size,2)/3 - 15px*2 - 10px;
+        padding: 5px 10px;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        .c-course-info-label {
+          font-weight: lighter;
+          color: $color_manatee_approx;
+          font-size: 16px;
+          margin-left: -5px;
+          margin-right: 10px;
+        }
+        .txt {
+          color: $white;
+          font-size: 24px;
+
+        }
+      }
+
+    }
+  }
+  .c-course-preview-manu {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    width: nth($c-preview-course-manu-size, 1);
+    height: nth($c-preview-course-manu-size, 2);
+    .c-course-preview-like-btn {
+      width: inherit;
+      height: 140px;
+      line-height: 170px;
+      margin: auto;
+      text-align: center;
+      background-color: $color-course-like-bg;
+      color: $color_manatee_approx;
+      cursor: pointer;
+      &::before{
+        display: block;
+        position: absolute;
+        width: inherit;
+        height: 40px;
+        text-align: center;
+        font-size: 35px;
+        @include translate(0, -30px);
+        @extend .iconfont;
+        content: $icon-zan;
+      }
+      &[data-focused="true"]::before{
+        content: $icon-zanxuanzhong;
+        color: $color_guardsman_red_approx;
+      }
+      .txt::before{
+        content:"关注此课程";
+      }
+      &[data-focused="true"] .txt::before{
+        content:"已关注";
+      }
+
+      &:hover{
+        color: #ddd;
+      }
+      .txt{
+        display: block;
+        margin: auto;
+        font-size: 16px;
+        color: inherit;
+      }
+    }
+    .c-course-preview-learn-now{
+      display: block;
+      width: inherit;
+      text-decoration: none;
+      height:  nth($c-preview-course-manu-size, 2) - 140px;
+      line-height: nth($c-preview-course-manu-size, 2) - 140px;
+      margin: auto;
+      text-align: center;
+      background-color: $color_guardsman_red_approx;
+      color: $white;
+      cursor: pointer;
+      &:hover{
+        background-color: $color_brick_red_approx;
+      }
+      .txt{
+        font-size: 24px;
+        color: inherit;
+        text-indent: 3px;
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+}

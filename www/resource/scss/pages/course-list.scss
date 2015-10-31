@@ -1,0 +1,43 @@
+@import "../common";
+
+body{
+  background-color: $body_bg_color;
+}
+.course-index {
+  .course-nav-wrapper{
+    width: 100%;
+    padding: 20px;
+    @import "course-list/coure-nav-list";
+  }
+}
+
+.search-btn{
+  height: 35px;
+  width: 90px;
+  color: #fff;
+  line-height: 35px;
+  font-size: 14px;
+  text-indent: 2px;
+  letter-spacing: 2px;
+  text-align: center;
+  border-radius: 2px;
+  background-color: $color_guardsman_red_approx;
+  cursor: pointer;
+  &:hover {
+    background-color: darken($color_guardsman_red_approx, 5);
+  }
+}
+#courses{
+  width: 100%;
+  border: none;
+  &.empty{
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    &::before{
+      content: "暂时没有符合条件的课程";
+    }
+
+  }
+  @import "course-list/course-item";
+}

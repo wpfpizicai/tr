@@ -1,0 +1,10 @@
+App/Runtime/Data/app.pid
+App/Runtime/Cache
+App/Runtime/Temp
+node_modules
+output/
+output.tar.gz
+sftp-config.json
+.sass-cache/
+**/*.map
+.idea/

@@ -1,0 +1,138 @@
+<html ng-app="nebulafeAdmin">
+<%- include ./utils/common_head.ejs %>
+<body>
+<%- include ./utils/header.ejs %>
+<div class="container">
+    <div class="card partner-box">
+        <div class="row">
+            <h1>添加机构</h1>
+        </div>
+        <form class="row" id="partner-form">
+            <div class="row form-group">
+                <label class="col col-left" for="">
+                    <span class="txt">机构名称</span>
+                </label>
+
+                <div class="col">
+                    <input type="text" class="input input-mid" name="name" ng-model="name" placeholder="机构名"/>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <label class="col col-left" for="">
+                    <span class="txt">banner图片</span>
+                </label>
+
+                <div class="col">
+                    <div class="col">
+                        <label for="banner_input" class="radiusBtn square style_2 auto short-height"
+                               id="upload-label">上传banner</label>
+                        <input type="file" name="banner" class="hide" id="banner_input"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <img src="" alt="" id="banner_overview"/>
+            </div>
+
+            <div class="row form-group">
+                <label class="col col-left" for="">
+                    <span class="txt">机构logo</span>
+                </label>
+
+                <div class="col">
+                    <div class="col">
+                        <label for="img_input" class="radiusBtn square style_2 auto short-height"
+                               id="upload-label">上传logo</label>
+                        <input type="file" name="img" class="hide" id="img_input"/>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="" alt="" id="img_overview"/>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="col col-left" for="">
+                    <span class="txt">宽logo</span></label>
+
+                <div class="col">
+                    <div class="col">
+                        <label for="long_img_input" class="radiusBtn square style_2 auto short-height"
+                               id="upload-label">上传宽Logo</label>
+                        <input type="file" name="long_img" class="hide" id="long_img_input"/>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="" alt="" id="long_img_overview"/>
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="col col-left" for=""><span class="txt">机构简介</span></label>
+
+                <div class="col">
+                    <textarea type="text" class="input input-mid" name="introduction" ng-model="introduction"
+                              placeholder="填写机构简介"></textarea>
+                </div>
+
+            </div>
+            <div class="row center-block">
+                <div class="col col-left"></div>
+                <div class="col col-right">
+                    <span class="radiusBtn square style_1" id="submit_btn">提交</span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+<script>
+    $(function () {
+
+        function loadUpdatedImage(fileObj, name) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                var dataUrl = reader.result;
+                var width = name=="banner"? '700px':'120px';
+                $('#' + name + '_overview').attr('src', dataUrl).css({'width': width});
+            };
+            reader.readAsDataURL(fileObj);
+        }
+
+        function submit() {
+            var formData = new FormData(document.getElementById('partner-form'));
+            $.ajax({
+                url: '/manage/partner',
+                type: "POST",
+                data: formData,
+                processData: false,  // 告诉jQuery不要去处理发送的数据
+                contentType: false   // 告诉jQuery不要去设置Content-Type请求头
+            }).success(function () {
+                alert('提交成功');
+            });
+        }
+
+        function bind() {
+            $('#partner-form').on('change', function (ev) {
+                if (ev.target.tagName.toLowerCase() == 'input' && ev.target.getAttribute('type') == 'file') {
+                    var file = ev.target.files[0];
+                    if (file.type.indexOf('image') != -1) {
+                        loadUpdatedImage(file, ev.target.name);
+                    } else {
+                        alert('请上传图片格式文件!');
+                    }
+                }
+            });
+
+            $('#submit_btn').on('click',function(){
+                submit();
+            });
+        }
+
+        bind();
+    })
+</script>
+<%- include ./utils/templates.ejs %>
+</html>
+

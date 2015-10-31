@@ -1,0 +1,72 @@
+<!Doctype html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+    <link rel="stylesheet" href="/resource/css/course-list.css"/>
+</head>
+<body>
+<%- include ../header.ejs %>
+<div class="container course-index">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 serach-course">
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <input type="text" placeholder="搜索一门课程" class="form-control" id="search_content">
+                    </div>
+                </div>
+                <div class="col-xs-3 text-left">
+                    <div class="search-btn" id="search_btn">搜索</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 course-nav-wrapper">
+                <ul class="course-tags" id="course_tags">
+                    <li data-value="" class="bt3-row">
+                        <input id="categories_all" type="checkbox" checked="checked" data_id="all">
+                        <label for="categories_all" data-id="all">所有类别</label>
+                    </li>
+                    <li data-value="arts" class="bt3-row">
+                        <input id="categories_arts" type="checkbox" data_id="arts">
+                        <label for="categories_arts" data-id="arts">艺术</label>
+                    </li>
+                    <li data-value="english" class="bt3-row">
+                        <input id="categories_english" type="checkbox" data_id="english">
+                        <label for="categories_english" data-id="english">英语</label>
+                    </li>
+                    <li data-value="finance" class="bt3-row">
+                        <input id="categories_finance" type="checkbox" data_id="finance">
+                        <label for="categories_finance" data-id="finance">金融</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <!--<h3>课程</h3>-->
+            <div class="courses" id="courses">
+                <%courses.forEach(function(val){%>
+                <div class="course-item" onclick="window.location.href='/course/view/<%=val.id%>';">
+                    <div class="img-wrapper">
+                        <img src="http://n-course.oss-cn-beijing.aliyuncs.com/pic/<%=val.img%>" width="120"
+                             height="68">
+                    </div>
+                    <div class="course-item-intro-wrapper">
+                        <div class="c-title"><a href="/course/view/<%=val.id%>"><%=val.name%></a></div>
+                        <div class="c-partner"><%= val.source%></div>
+                        <div class="c-update-status"><%=val.update_status%></div>
+                    </div>
+                    <div class="last-time">
+                        <p><%=val.time%></p>
+                    </div>
+                </div>
+                <%})%>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ../footer.ejs %>
+<script>seajs.use('js/course/index');</script>
+</body>
+</html>

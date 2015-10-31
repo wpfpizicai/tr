@@ -1,0 +1,60 @@
+<!Doctype html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+
+    <!--<link rel="stylesheet" href="/resource/css/forget.css">-->
+    <link rel="stylesheet" href="/resource/css/user-mycourse.css"/>
+</head>
+<body>
+<%- include ../header.ejs %>
+<div class="container">
+    <%- include user_center_left.ejs %>
+    <div class="right-container">
+        <div class="my-wrap">
+            <div class="title-row">
+                <h3>我的课程</h3>
+            </div>
+            <div class="nav-row">
+                <div class="item active" id="focus-course" data-id="<%=userInfo.id%>">我的关注</div>
+                <div class="item" id="learnt-course" data-id="<%=userInfo.id%>">我的课程</div>
+            </div>
+            <div class="courses" id="courses">
+                <div>
+
+                </div>
+                <div class="c-tab-page" id="focus-course-page">
+                    <div class="courses-wrapper <%  if(f_courses.length == 0){%> empty <%}%>" style="border:none;margin-left: 10px">
+                        <% f_courses.forEach(function(c){%>
+
+                        <div class="course-item"
+                             onclick="window.location.href='/course/view/<%=c.id%>/<%=c.resourceid%>';">
+                            <div class="img-wrapper">
+                                <img src="http://n-course.oss-cn-beijing.aliyuncs.com/pic/<%=c.small_img%>"
+                                     width="120"
+                                     height="68">
+                            </div>
+                            <div class="course-item-intro-wrapper">
+                                <div class="c-title"><a href="/course/view/<%=c.id%>"><%=c.name%></a></div>
+                                <div class="c-partner"><%= c.source%></div>
+                                <div class="c-update-status"><%=c.update_status%></div>
+                            </div>
+                            <div class="last-time">
+                                <p><%=c.time%></p>
+                            </div>
+                        </div>
+                        <%})%>
+                    </div>
+
+                </div>
+                <div class="c-tab-page hide" id="learnt-course-page">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ../footer.ejs %>
+<script>seajs.use('js/user/mycourse');</script>
+</body>
+</html>

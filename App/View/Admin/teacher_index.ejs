@@ -1,0 +1,131 @@
+<html ng-app="nebulafeAdmin">
+<%- include ./utils/common_head.ejs %>
+<body>
+<%- include ./utils/header.ejs %>
+<div class="container">
+    <div class="row">
+        <div class="center-block col-sm-20">
+
+        </div>
+
+    </div>
+    <div class="card teacher-box">
+        <div class="row">
+            <h1>添加教师信息</h1>
+        </div>
+        <form class="row" id="teacher-edit" action="/manage/teacher" method="post">
+            <div class="row ">
+                <label class="col col-left ">
+                    <span class="txt">相关课程</span>
+                </label>
+
+                <div class="col col-right">
+                    <select class="input input-mid" name="course">
+                        <% courses.forEach(function(val){ %>
+                        <option value="<%- val.id %>"><%- val.name %></option>
+                        <% }) %>
+                    </select>
+                </div>
+
+            </div>
+            <div class="row">
+                <label class="col col-left" for="">
+                    <span class="txt">教师姓名</span>
+                </label>
+
+                <div class="col col-right">
+                    <input type="text" class="input input-mid" name="name" placeholder="教师姓名"/>
+                </div>
+
+            </div>
+            <div class="row">
+                <label class="col col-left" for="">
+                    <span class="txt">头像</span>
+                </label>
+
+                <div class="col col-right">
+                    <label for="teacher-head" class="radiusBtn square style_2 auto short-height"
+                           id="upload-label">上传头像</label>
+                    <input type="file" name="img" class="hide" id="teacher-head"/>
+
+                </div>
+                <div class="col" id="head-wrapper">
+
+                </div>
+            </div>
+            <div class="row ">
+                <label class="col col-left" for="">
+                    <span class="txt">教师职称 </span>
+                </label>
+
+                <div class="col col-right">
+                    <input type="text" class="input input-mid" name="career" placeholder="教师职称"/>
+                </div>
+            </div>
+
+            <div class="row ">
+                <label class="col col-left" for="">
+                    <span class="txt">教师介绍</span>
+                </label>
+
+                <div class="col col-right">
+                    <textarea  class="input input-long" style="resize: vertical; min-height: 80px; line-height: 1.7;" name="description" placeholder="教师的介绍"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-left"></div>
+                <div class="col col-right">
+                    <label class="radiusBtn square style_1 " id="submit-btn">保 存</label>
+                    <input type="submit" class="hide" id="submit-input"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    (function () {
+        $("#teacher-head").on('change', function (ev) {
+            var form = $('#teacher-edit').get(0);
+            var img = $("#teacher-head").get(0).files[0];
+            loadUpdatedFile(img);
+
+        });
+        function loadUpdatedFile(fileObj) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var file = reader.result;
+                var img = new Image();
+                img.src = file;
+                $('#head-wrapper img').remove();
+                img.width = 100;
+                $('#head-wrapper').append(img);
+                console.log(reader.result);
+            };
+            reader.readAsDataURL(fileObj);
+        }
+        $('#submit-btn').on('click',function(){
+            var form = $('#teacher-edit').get(0);
+            var data = new FormData(form);
+            $.ajax({
+                url: '/manage/teacher',
+                type: "POST",
+                data: data,
+                processData: false,  // 告诉jQuery不要去处理发送的数据
+                contentType: false   // 告诉jQuery不要去设置Content-Type请求头
+            }).success(function (response) {
+                alert('提交成功');
+                console.log(response);
+            });
+        });
+    })();
+
+
+</script>
+<%- include ./utils/templates.ejs %>
+<script type="text/ng-template" id="templates/admin/teacher/edit.ejs">
+
+</script>
+</html>
+

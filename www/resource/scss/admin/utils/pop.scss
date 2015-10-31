@@ -1,0 +1,169 @@
+@import "../settings";
+.popLayout {
+  font-family: $font_1, $font_2, $font_3, $font_4, $font_5;
+  width: 398px;
+  background-color: $white;
+  position: fixed;
+  z-index: 1001;
+  border: 1px solid $color_nobel;
+  colort: $color_trout;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.2s ease-out 0s;
+  -webkit-transition: all 0.2s ease-out 0s;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  color: $color_trout;
+  overflow: hidden;
+  &.radius {
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 5px;
+  }
+  .popContent {
+    .title {
+      padding: 0 20px;
+      font-size: 14px;
+      height: 45px;
+      line-height: 45px;
+      border-bottom: 1px solid $color_geyser;
+      .titleTxt {
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .del {
+        float: right;
+        cursor: pointer;
+        font-family: $font_6;
+        font-size: 12px;
+        font-style: normal;
+        &:before {
+          content: "\e60e";
+          font-size: 14px;
+          color: $color_casper;
+        }
+        &:hover:before {
+          color: $color_nevada;
+        }
+      }
+
+    }
+    p{
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    textarea.link-textarea{
+      width: 100%;
+      height: 70px;
+      padding: 10px 15px;
+      box-sizing: border-box;
+      background-color: $color-bg-content;
+      font-size: 12px;
+      resize: none;
+      cursor: alias;
+      line-height: 1.5;
+      margin-top: 10px;
+      border-color: transparent;
+    }
+    .pcontent {
+      padding: 20px;
+      line-height: 30px;
+      overflow: hidden;
+      font-size: 14px;
+      .leftIcon {
+        float: left;
+        width: 60px;
+        height: 74px;
+        .delTipImg {
+          display: inline-block;
+          height: 35px;
+          width: 42px;
+          margin-left: 10px;
+          font-family: $font_6;
+          font-size: 12px;
+          font-style: normal;
+          &:before {
+            content: "\e60d";
+            font-size: 40px;
+            color: $color_casper;
+          }
+        }
+      }
+      .rightContent {
+        width: 290px;
+        height: 74px;
+        float: left;
+        font-size: 14px;
+        .title {
+          line-height: 40px;
+          font-size: 14px;
+        }
+      }
+      .tip {
+        height: 15px;
+      }
+    }
+    .warningTip {
+      font-size: 12px;
+    }
+    .tipTxt {
+      font-size: 12px;
+    }
+  }
+  .popBtns {
+    height: 36px;
+    padding: 16px 20px 16px 16px;
+    text-align: center;
+    .btn {
+      width: 60px;
+    }
+    .btn2 {
+      width: 60px;
+      margin-left: 10px;
+    }
+    .btn3 {
+      width: 60px;
+      margin-left: 10px;
+    }
+  }
+  .bottomLink {
+    padding-bottom: 20px;
+  }
+  .pop-icon {
+    display: block;
+    margin: 0;
+    float: right;
+    height: 50px;
+    width: 50px;
+    &.exclamation::before {
+      @extend %extend_6;
+    }
+    &.ok::before {
+      @extend %extend_7;
+    }
+    &.wrong::before {
+      @extend %extend_8;
+    }
+  }
+  .image-wrapper {
+    width: 60px;
+    text-align: right;
+  }
+  .text-wrapper {
+    width: 290px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.9em;
+  }
+  .content-row {
+    padding-top: 20px;
+  }
+  strong {
+    font-weight: bold;
+  }
+  .col {
+    vertical-align: middle;
+  }
+  .row .radiusBtn {
+    margin: 0 10px;
+    margin-bottom: 15px;
+  }
+}

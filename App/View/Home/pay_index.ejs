@@ -1,0 +1,262 @@
+<!Doctype html>
+<html>
+<head>
+    <%- include ../meta.ejs %>
+    <link rel="stylesheet" href="/resource/css/pay_index.css"/>
+    <!--<link rel="stylesheet" href="/resource/bower_components/bootstrap/dist/css/bootstrap.css"/>-->
+</head>
+<body>
+<%- include ../header.ejs %>
+<div class="container n-pay">
+    <div class="row">
+        <div class="col col-left">星云账号</div>
+        <div class="col col-right"><%= userInfo.username %></div>
+    </div>
+    <div class="row">
+        <div class="col col-left">课程名称</div>
+        <div class="col col-right">
+            <span><%= course.name %></span>
+        </div>
+    </div>
+    <div class="row pay-method-wrapper">
+        <div class="col col-left">开通方式</div>
+        <div class="col col-right" id="pay_method_wrapper">
+            <div class="pay-method">
+                <input type="radio" value="1" name="payMethod" id="input_pay_method_1"/>
+                <label class="" for="input_pay_method_1">
+                    <span>支付宝一键支付</span>
+                </label>
+            </div>
+            <div class="pay-method">
+                <input type="radio" value="2" name="payMethod" id="input_pay_method_2"/>
+                <label class="" for="input_pay_method_2">
+                    <span>网银/网上支付</span>
+                </label>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row" id="banks" style="display: none">
+        <div class="col col-left">选择银行</div>
+        <div class="col col-right">
+            <ul class="all-bank clearfix">
+                <li action-type="selectBank" action-data="id=CMB">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="CMB">
+                    <label for="CMB" class="bank_select">
+                    <span
+                            class="bank_btn"><i class="bank_ico bank_CMB">招商银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=CCB">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="CCB">
+                    <label for="CCB" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_CCB">中国建设银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=ICBC">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="ICBC">
+                    <label for="ICBC" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_ICBC">中国工商银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=ABC">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="ABC">
+                    <label for="ABC" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_ABC">中国农业银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=BCOM">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="BCOM">
+                    <label for="BCOM" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_BCOM">交通银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=CMBC">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="CMBC">
+                    <label for="CMBC" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_CMBC">中国民生银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=SPDB">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="SPDB">
+                    <label for="SPDB" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_SPDB">浦发银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=BOC">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="BOC">
+                    <label for="BOC" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_BOC">中国银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=GDB">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="GDB">
+                    <label for="GDB" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_GDB">广东发展银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=CITIC">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="CITIC">
+                    <label for="CITIC" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_CITIC">中信银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=CIB">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="CIB">
+                    <label for="CIB" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_CIB">兴业银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=SHRCC">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="SHRCC">
+                    <label for="SHRCC" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_SHRCC">上海农村商业银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=POST">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="POST">
+                    <label for="POST" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_POST">中国邮政储蓄银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=CEB">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="CEB">
+                    <label for="CEB" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_CEB">中国光大银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=BOB">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="BOB">
+                    <label for="BOB" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_BOB">北京银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=PAB">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="PAB">
+                    <label for="PAB" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_PAB">平安银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=HZB">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="HZB">
+                    <label for="HZB" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_HZB">杭州银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=SHB">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="SHB">
+                    <label for="SHB" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_SHB">上海银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=NBCB">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="NBCB">
+                    <label for="NBCB" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_NBCB">宁波银行
+                        </i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+                <li action-type="selectBank" action-data="id=YCCCB">
+                    <input type="radio" name="bank_choosed" class="W_radio" id="YCCCB">
+                    <label for="YCCCB" class="bank_select">
+                    <span class="bank_btn"><i
+                                class="bank_ico bank_YCCCB">宁夏银行</i></span>
+                        <i class="icon_check"></i>
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col col-left">有效期至</div>
+        <div class="col col-right">
+            <span><%=valid_date%></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-left">应付金额</div>
+        <div class="col col-right"><span class="price"><b><%=course.price%></b> （节省 <strike>241元</strike>）</span></div>
+    </div>
+    <div class="row">
+        <div class="col col-left">备注</div>
+        <div class="col col-right">
+            <input id="n_comment"  type="text" placeholder="如需发票，可注明发票抬头邮寄地址等信息！" style="border:none;width:600px;outline:none;color:#333;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-left">
+            <form style="float: left; margin-left:5px " action="/pay/info" method="POST" target="_blank">
+                <input type="hidden" value="0" name="isalipay">
+                <input type="hidden" value="<%=order_unique_id%>" name="order_unique_id">
+                <input type="hidden" value="" name="bankname">
+                <input type="hidden" value="/course/video/<%=course.id%>" name="showurl">
+                <input type="hidden" value="<%=course.id%>" name="courseid">
+                <input type="hidden" value="<%=course.name%>" name="name">
+                <input type="hidden" value="" name="comment">
+                <input class="btn btn-warning pay-order" type="submit" data-orderid="<%=order_unique_id%>" value="前往支付">
+            </form>
+        </div>
+    </div>
+</div>
+<%- include ../footer.ejs %>
+<script>seajs.use('js/pay/index')</script>
+<%- include ./pay_modal.ejs %>
+</body>
+</html>

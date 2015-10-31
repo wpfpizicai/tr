@@ -1,0 +1,25 @@
+@import "../sassCore/function";
+
+teacher-edit{
+  display: block;
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0,0,0,.4);
+  text-align: center;
+  top:0;
+  left: 0;
+  .teacher-edit{
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 600px;
+    box-sizing: border-box;
+    padding: 30px 10px;
+    height: auto;
+    overflow: hidden;
+    margin-top:  50vh;
+    @include translateY(-50%);
+    background-color: #4E5D6C;
+  }
+}

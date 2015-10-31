@@ -1,0 +1,202 @@
+<script type="text/ng-template" id="templates/admin/user/login.ejs">
+    <form class="form-horizontal col-sm-30">
+        <div class="row form-group">
+            <label class="col-sm-5 col-sm-offset-2" for="">注册邮箱</label>
+
+            <div class="col-sm-20">
+                <input type="text" class="form-control" ng-model="userInfo.email" placeholder="注册邮箱"/>
+            </div>
+
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-5 col-sm-offset-2" for="">密码</label>
+
+            <div class="col-sm-20">
+                <input type="password" class="form-control" ng-model="userInfo.pwd" placeholder="密码"/>
+            </div>
+        </div>
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+        <div class="form-group">
+            <button type="button" class="btn btn-info" value="show!" ng-click="submitLogin()">登录</button>
+        </div>
+    </form>
+</script>
+
+<script type="text/ng-template" id="templates/admin/user/register.ejs">
+    <form class="form-horizontal col-sm-30">
+        <div class="row form-group">
+            <label class="col-sm-5 col-sm-offset-2" for="">注册邮箱</label>
+
+            <div class="col-sm-20">
+                <input type="text" class="form-control" ng-model="userInfo.email" placeholder="注册邮箱"/>
+            </div>
+
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-5 col-sm-offset-2" for="">昵称</label>
+
+            <div class="col-sm-20">
+                <input type="text" class="form-control" ng-model="userInfo.username" placeholder="昵称"/>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-5 col-sm-offset-2" for="">密码</label>
+
+            <div class="col-sm-20">
+                <input type="password" class="form-control" ng-model="userInfo.pwd" placeholder="密码"/>
+            </div>
+        </div>
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+        <div class="form-group">
+            <button type="button" class="btn btn-info" ng-click="submitRegister()">注册</button>
+            <button type="button" class="btn btn-info" ng-click="addLogin()">添加指令！</button>
+        </div>
+    </form>
+</script>
+
+<script type="text/ng-template" id="templates/admin/left.ejs">
+    <nav class="left-nav" id="left_nav" ng-controller="courseController">
+        <a class="item" href="/manage/course/">
+            <span>课程管理</span>
+        </a>
+        <a class="item" href="/manage/course/">
+            <span>课程发布</span>
+        </a>
+        <a class="item" href="/manage/partner/">
+            <span>添加机构</span>
+        </a>
+        <a class="item" href="/manage/teacher/">
+            <span>添加教师</span>
+        </a>
+        <a class="item" href="/manage/resource/">
+            <span>添加视频</span>
+        </a>
+    </nav>
+</script>
+
+<!--编辑机构-->
+<script type="text/ng-template" id="templates/admin/partner/edit.ejs">
+    <form class="form-horizontal col-sm-30">
+        <div class="row form-group">
+            <label class="col-sm-5 col-sm-offset-2" for="">机构名称</label>
+            <div class="col-sm-20">
+                <input type="text" class="form-control" name="name" ng-model="name" placeholder="机构名"/>
+            </div>
+        </div>
+        <div class="row form-group" ng-if="mode!='new'">
+            <label class="col-sm-5 col-sm-offset-2" for="">机构banner图片</label>
+
+            <div class="col-sm-20">
+                <img ng-src="{{logo}}" alt=""/>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-5 col-sm-offset-2" for="">上传banner图片</label>
+            <div class="col-sm-23">
+                <uploader url="/manage/partner" multi="" name="banner"></uploader>
+            </div>
+        </div>
+
+        <div class="row form-group" ng-if="mode!='new'">
+            <label class="col-sm-5 col-sm-offset-2" for="">机构logo</label>
+
+            <div class="col-sm-20">
+                <img ng-src="{{logo}}" alt=""/>
+            </div>
+
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-5 col-sm-offset-2" for="">上传logo</label>
+            <div class="col-sm-23">
+                <uploader url="/manage/partner" multi="" name="img"></uploader>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-5 col-sm-offset-2" for="">上传宽logo</label>
+            <div class="col-sm-23">
+                <uploader url="/manage/partner" multi="" name="long_img"></uploader>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-sm-5 col-sm-offset-2" for="">机构简介</label>
+
+            <div class="col-sm-20">
+                <textarea type="text" class="form-control" name="introduction" ng-model="introduction" placeholder="填写机构简介">
+                </textarea>
+            </div>
+        </div>
+        <div class="row center-block">
+            <button type="button" class="btn btn-info" ng-click="submit()">提交</button>
+        </div>
+    </form>
+</script>
+
+
+
+
+
+<!--教师信息-->
+<script type="text/ng-template" id="templates/admin/teacher/info.ejs">
+    <div class="row teacher-info" ng-repeat="teacher in teachers">
+        <div class="col-sm-6">
+            <img ng-src="{{teacher.avator}}" alt="暂无照片"/>
+        </div>
+        <div class="col-sm-6">
+            <span>{{teacher.name}}</span>
+        </div>
+        <div class=" col-sm-14">
+            <p>{{teacher.intro}}</p>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-info" ng-click="editTeacher($index,'edit')">编辑</button>
+        </div>
+    </div>
+    <div class="row center-block">
+        <a class="btn btn-info" ng-click="editTeacher('','new')">添加教师</a>
+    </div>
+    <div>
+        <teacher-edit ng-repeat="toEdit in toEditTeachers" mode="{{toEdit.mode}}" _id="{{toEdit._id}}"
+                      index="{{$index}}" course_id="{{course.id}}"></teacher-edit>
+    </div>
+</script>
+
+
+
+
+
+<script type="text/ng-template" id="templates/admin/uploader.ejs">
+    <div class="my-uploader">
+        <div class="upload-wrapper">
+            <input type="file" id="poster" ng-model="uploadFile"/>
+            <button type="button" class="btn btn-info upload-btn">上传图片</button>
+        </div>
+        <div class="upload-content" href="{{uploadURL}}">
+            <span ng-if="filesInfo.length == 0">
+                还没有文件在上传
+            </span>
+        </div>
+    </div>
+    <div class="row upload-result">
+        <div class="row img-preview" ng-repeat="f in filesInfo">
+            <div class="row">
+                <div class="info">
+                    <img class="thumbnail" ng-src="{{f.dataURL}}" alt="加载中" ng-if="f.type.indexOf('image') > -1"/>
+                    <span class="thumnail" ng-if="f.type.indexOf('image') == -1"> 该文件类型为{{f.type}},不能像图片一样预览哟 </span>
+                </div>
+                <div class="info">
+                    <div>文件名:</div>
+                    <span>{{f.name}}</span>
+                </div>
+                <div class="info">
+                    <div>大小:</div>
+                    <span>{{f.size}}</span>
+                </div>
+                <div class="info">
+                    <div>类型:</div>
+                    <span>{{f.type}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>

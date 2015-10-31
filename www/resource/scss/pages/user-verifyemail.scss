@@ -1,0 +1,72 @@
+@import "user-setting";
+.right-container {
+  .my-wrap {
+    min-height: calc(100vh - 260px);
+    .head{
+      width: 400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .bg-text{
+      font-size: 12px;
+      width: 180px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 5px 10px;
+    }
+    .bg-success{
+      background-color: #dff0d8;
+    }
+    .bg-danger{
+      background-color: #f2dede;;
+    }
+    .status{
+      text-align: center;
+      button{
+        margin: 0 10px;
+      }
+      .send-verify{
+        margin: 25px 0;
+        input{
+          background: #fff;
+          padding: 7px;
+          width: 120px;
+          vertical-align: top;
+        }
+        img{
+          vertical-align: top;
+          margin: 0 5px;
+        }
+        .change-code{
+          display: inline-block;
+          cursor: pointer;
+          line-height: 1.2;
+          vertical-align: middle;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .forgot-send-result {
+    text-align: center;
+    display: none;
+  }
+  .forgot-send-result i {
+    display: inline-block;
+    margin: 10px 0 0 -40px;
+    width: 104px;
+    height: 48px;
+    background: url(/static/images/rl-sprite.png) no-repeat 0 -260px;
+  }
+  .forgot-send-result p {
+    color: #666;
+    padding: 24px 0 55px;
+  }
+  .forgot-send-result p a {
+    color: #3c3 !important;
+    text-decoration: underline;
+  }
+  .forgot-send-result em {
+    font-weight: italic;
+  }
+}
